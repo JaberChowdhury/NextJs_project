@@ -1,9 +1,9 @@
 <h1 align="center">NextJs-project</h1>
 <hr />
 
-## Branch : main
+## Branch : starter-code
 
-## Description : Initial project or starter code
+## Description : starter code with shadcn setup
 
 <hr />
 
