@@ -1,9 +1,10 @@
 <h1 align="center">NextJs-project</h1>
 <hr />
 
-## Branch : starter-code
+## Branch : color-web
 
-## Description : starter code with shadcn setup
+## Description : Creating a website to play with color
+
 
 <hr />
 
@@ -26,3 +27,4 @@ git clone https://github.com/JaberChowdhury/NextJs_project
 ```bash
 gh repo clone JaberChowdhury/NextJs_project
 ```
+
