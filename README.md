@@ -1,9 +1,9 @@
 <h1 align="center">NextJs-project</h1>
 <hr />
 
-## Branch : starter-code
+## Branch : color-web
 
-## Description : starter code with shadcn setup
+## Description : crrating a website to paly with colors
 
 <hr />
 
