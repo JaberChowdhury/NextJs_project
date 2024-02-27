@@ -1,22 +1,22 @@
 class Colorutils {
-  #inputColor?: string;
-  #hexadecimalCode: { main: string[]; opposite: string[] };
+  inputColor?: string;
+  hexadecimalCode: { main: string[]; opposite: string[] };
   constructor(inputColor?: string) {
-    this.#hexadecimalCode = {
+    this.hexadecimalCode = {
       main: "0123456789abcdef".split(""),
       opposite: "0123456789abcdef".split("").reverse(),
     };
-    this.#inputColor = inputColor;
+    this.inputColor = inputColor;
   }
 
   setInputColor() {
-    if (!this.#inputColor) {
+    if (!this.inputColor) {
       let color = "#";
       for (let i = 0; i < 6; i++) {
         const randomNumber = Math.floor(Math.random() * 16);
-        color += this.#hexadecimalCode.main[randomNumber];
+        color += this.hexadecimalCode.main[randomNumber];
       }
-      this.#inputColor = color;
+      this.inputColor = color;
     }
   }
 
@@ -79,20 +79,20 @@ class Colorutils {
       main: { r: "", g: "", b: "", string: "" },
       opposite: { r: "", g: "", b: "", string: "" },
     };
-    const inputColorLength = this.#inputColor ? this.#inputColor.length : 0;
+    const inputColorLength = this.inputColor ? this.inputColor.length : 0;
     switch (inputColorLength) {
       case 6:
       case 7:
         if (
-          this.#inputColor &&
-          this.#inputColor.startsWith("#") &&
-          this.#inputColor.length === 6
+          this.inputColor &&
+          this.inputColor.startsWith("#") &&
+          this.inputColor.length === 6
         ) {
           return dataObject;
         }
-        let color = this.#inputColor ? this.#inputColor : "";
-        if (this.#inputColor && this.#inputColor.startsWith("#")) {
-          color = this.#inputColor.slice(1);
+        let color = this.inputColor ? this.inputColor : "";
+        if (this.inputColor && this.inputColor.startsWith("#")) {
+          color = this.inputColor.slice(1);
         }
 
         const colorArray = color.split("");
@@ -133,21 +133,21 @@ class Colorutils {
         const bn2 = Math.floor(Math.random() * 16);
 
         dataObject.main.r =
-          this.#hexadecimalCode.main[rn1] + this.#hexadecimalCode.main[rn2];
+          this.hexadecimalCode.main[rn1] + this.hexadecimalCode.main[rn2];
         dataObject.main.g =
-          this.#hexadecimalCode.main[gn1] + this.#hexadecimalCode.main[gn2];
+          this.hexadecimalCode.main[gn1] + this.hexadecimalCode.main[gn2];
         dataObject.main.b =
-          this.#hexadecimalCode.main[bn1] + this.#hexadecimalCode.main[bn2];
+          this.hexadecimalCode.main[bn1] + this.hexadecimalCode.main[bn2];
 
         dataObject.opposite.r =
-          this.#hexadecimalCode.opposite[rn1] +
-          this.#hexadecimalCode.opposite[rn2];
+          this.hexadecimalCode.opposite[rn1] +
+          this.hexadecimalCode.opposite[rn2];
         dataObject.opposite.g =
-          this.#hexadecimalCode.opposite[gn1] +
-          this.#hexadecimalCode.opposite[gn2];
+          this.hexadecimalCode.opposite[gn1] +
+          this.hexadecimalCode.opposite[gn2];
         dataObject.opposite.b =
-          this.#hexadecimalCode.opposite[bn1] +
-          this.#hexadecimalCode.opposite[bn2];
+          this.hexadecimalCode.opposite[bn1] +
+          this.hexadecimalCode.opposite[bn2];
 
         dataObject.main.string =
           "#" + dataObject.main.r + dataObject.main.g + dataObject.main.b;
@@ -168,20 +168,20 @@ class Colorutils {
       opposite: { r: "", g: "", b: "", string: "" },
     };
 
-    const inputColorLength = this.#inputColor ? this.#inputColor.length : 0;
+    const inputColorLength = this.inputColor ? this.inputColor.length : 0;
     switch (inputColorLength) {
       case 6:
       case 7:
         if (
-          this.#inputColor &&
-          this.#inputColor.startsWith("#") &&
-          this.#inputColor.length === 6
+          this.inputColor &&
+          this.inputColor.startsWith("#") &&
+          this.inputColor.length === 6
         ) {
           return dataObject;
         }
-        let color = this.#inputColor ? this.#inputColor : "";
-        if (this.#inputColor && this.#inputColor.startsWith("#")) {
-          color = this.#inputColor.slice(1);
+        let color = this.inputColor ? this.inputColor : "";
+        if (this.inputColor && this.inputColor.startsWith("#")) {
+          color = this.inputColor.slice(1);
         }
         const colorArray = color.split("");
         const r = parseInt(colorArray[0] + colorArray[1], 16);
@@ -229,20 +229,20 @@ class Colorutils {
       main: { hue: "", saturation: "", lighting: "", string: "" },
       opposite: { hue: "", saturation: "", lighting: "", string: "" },
     };
-    const inputColorLength = this.#inputColor ? this.#inputColor.length : 0;
+    const inputColorLength = this.inputColor ? this.inputColor.length : 0;
     switch (inputColorLength) {
       case 6:
       case 7:
         if (
-          this.#inputColor &&
-          this.#inputColor.startsWith("#") &&
-          this.#inputColor.length === 6
+          this.inputColor &&
+          this.inputColor.startsWith("#") &&
+          this.inputColor.length === 6
         ) {
           return dataObject;
         }
-        let color = this.#inputColor ? this.#inputColor : "";
-        if (this.#inputColor && this.#inputColor.startsWith("#")) {
-          color = this.#inputColor.slice(1);
+        let color = this.inputColor ? this.inputColor : "";
+        if (this.inputColor && this.inputColor.startsWith("#")) {
+          color = this.inputColor.slice(1);
         }
         const colorArray = color.split("");
         const r = parseInt(colorArray[0] + colorArray[1], 16);
