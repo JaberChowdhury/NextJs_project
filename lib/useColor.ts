@@ -88,7 +88,7 @@ class Colorutils {
           this.#inputColor.startsWith("#") &&
           this.#inputColor.length === 6
         ) {
-          return dataObject
+          return dataObject;
         }
         let color = this.#inputColor ? this.#inputColor : "";
         if (this.#inputColor && this.#inputColor.startsWith("#")) {
@@ -100,13 +100,19 @@ class Colorutils {
         const g = parseInt(colorArray[2] + colorArray[3], 16);
         const b = parseInt(colorArray[4] + colorArray[5], 16);
 
-        dataObject.main.r = r.toString(16).padStart(2,r.toString(16));
-        dataObject.main.g = g.toString(16).padStart(2,g.toString(16));
-        dataObject.main.b = b.toString(16).padStart(2,b.toString(16));
+        dataObject.main.r = r.toString(16).padStart(2, r.toString(16));
+        dataObject.main.g = g.toString(16).padStart(2, g.toString(16));
+        dataObject.main.b = b.toString(16).padStart(2, b.toString(16));
 
-        dataObject.opposite.r = (255 - r).toString(16).padStart(2,(255 - r).toString(16));
-        dataObject.opposite.g = (255 - g).toString(16).padStart(2,(255 - g).toString(16));
-        dataObject.opposite.b = (255 - b).toString(16).padStart(2,(255 - b).toString(16));
+        dataObject.opposite.r = (255 - r)
+          .toString(16)
+          .padStart(2, (255 - r).toString(16));
+        dataObject.opposite.g = (255 - g)
+          .toString(16)
+          .padStart(2, (255 - g).toString(16));
+        dataObject.opposite.b = (255 - b)
+          .toString(16)
+          .padStart(2, (255 - b).toString(16));
 
         dataObject.main.string =
           "#" + dataObject.main.r + dataObject.main.g + dataObject.main.b;
@@ -152,7 +158,7 @@ class Colorutils {
           dataObject.opposite.b;
         return dataObject;
       default:
-        return dataObject
+        return dataObject;
     }
   }
 
@@ -171,7 +177,7 @@ class Colorutils {
           this.#inputColor.startsWith("#") &&
           this.#inputColor.length === 6
         ) {
-          return dataObject
+          return dataObject;
         }
         let color = this.#inputColor ? this.#inputColor : "";
         if (this.#inputColor && this.#inputColor.startsWith("#")) {
@@ -214,7 +220,7 @@ class Colorutils {
         return dataObject;
 
       default:
-        return dataObject
+        return dataObject;
     }
   }
 
@@ -232,7 +238,7 @@ class Colorutils {
           this.#inputColor.startsWith("#") &&
           this.#inputColor.length === 6
         ) {
-          return dataObject
+          return dataObject;
         }
         let color = this.#inputColor ? this.#inputColor : "";
         if (this.#inputColor && this.#inputColor.startsWith("#")) {
@@ -295,7 +301,7 @@ class Colorutils {
 
         return dataObject;
       default:
-        return dataObject
+        return dataObject;
     }
   }
 
