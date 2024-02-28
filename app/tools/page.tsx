@@ -19,7 +19,7 @@ const Home = () => {
     {
       id: 2,
       title: "Rgb color generator",
-      to: "/tool/rgbgenerator",
+      to: "/tools/rgbgenerator",
       description:
         "Generate rgb color with we made tool with so many features.",
     },
