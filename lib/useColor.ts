@@ -308,9 +308,12 @@ class Colorutils {
   getColor() {
     this.setInputColor();
     return {
+      id: crypto.randomUUID(),
       hexa: this.getHexadecimalColor(),
       rgb: this.getRgbColor(),
       hsl: this.getHslColor(),
     };
   }
 }
+
+export default Colorutils;

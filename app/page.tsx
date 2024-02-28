@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <div className="w-full z-10 min-h-[80vh] flex justify-center items-center flex-col relative gap-y-6">
+    <div className="w-full overflow-hidden z-10 min-h-[80vh] flex justify-center items-center flex-col relative gap-y-6">
       <CardTitle className="text-6xl">Color Web</CardTitle>
       <CardDescription className="text-center">
         Color Web is a website to play with color using free built in tools
