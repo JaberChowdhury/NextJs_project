@@ -1,7 +1,6 @@
 import { MdMenu } from "react-icons/md";
 import Navlist from "./Navlist";
-import Link from "next/link"
-
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -14,7 +13,9 @@ const Navbar = () => {
           <Navlist />
         </div>
         <div className="flex-1">
-          <Link href="/" className="btn btn-ghost text-xl">Color Web</Link>
+          <Link href="/" className="btn btn-ghost text-xl">
+            Color Web
+          </Link>
         </div>
       </div>
       <div className="flex-none">

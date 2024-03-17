@@ -1,15 +1,7 @@
-import fileSystem from "fs";
 import Link from "next/link";
-import path from "path";
-
-const location = path.join(__dirname, "../../app/tools");
-const fs = fileSystem.promises;
 
 const Navlist = async () => {
-  const toolsData = await fs.readdir(location);
-  const tools = await toolsData.filter((data) => {
-    return data !== "page.tsx";
-  });
+  const tools = ["hsl-generator", "mesh-generator", "rgb-generator"];
 
   return (
     <ul
