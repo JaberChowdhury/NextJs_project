@@ -1,8 +1,7 @@
 import Link from "next/link";
+import tools from "@/constant/tools";
 
-const Navlist = async () => {
-  const tools = ["hsl-generator", "mesh-generator", "rgb-generator"];
-
+const Navlist = () => {
   return (
     <ul
       tabIndex={0}

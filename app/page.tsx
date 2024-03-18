@@ -11,9 +11,14 @@ const Home = () => {
             <b>Unleash</b> the power of colors from core !!{" "}
             <b>Generate, convert, mix </b> the colors from the various aspects.
           </p>
-          <Link href="/tools">
-            <button className="btn btn-primary">Get Started</button>
-          </Link>
+          <div className="flex justify-center  items-center gap-x-2">
+            <Link href="/tools">
+              <button className="btn btn-primary">Tools</button>
+            </Link>
+            <Link href="/more">
+              <button className="btn btn-primary">More</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
