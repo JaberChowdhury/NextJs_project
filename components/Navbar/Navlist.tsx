@@ -1,7 +1,10 @@
 import Link from "next/link";
 import tools from "@/constant/tools";
+import more from "@/constant/more";
 
 const Navlist = () => {
+  const pathList = [...tools, ...more];
+
   return (
     <ul
       tabIndex={0}
@@ -10,7 +13,7 @@ const Navlist = () => {
       <li>
         <Link href={"/tools"}>Tools</Link>
       </li>
-      {tools.map((tool, index) => (
+      {pathList.map((tool, index) => (
         <li key={index}>
           <Link href={`/tools/${tool}`}>{tool.toUpperCase()}</Link>
         </li>
