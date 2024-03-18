@@ -4,7 +4,7 @@ import utils from "@/lib/utils";
 const colorUtils = new utils();
 type colorsType = ReturnType<typeof colorUtils.getColor>;
 
-const useColors = (limit?: number = 100): colorsType => {
+const useColors = (limit: number = 100): colorsType[] => {
   let colors = [];
   for (let i = 1; i < limit + 1; i++) {
     const Utility = new utils();
