@@ -1,8 +1,9 @@
 "use server";
+
 import utils from "@/lib/utils";
 
 const colorUtils = new utils();
-type colorsType = ReturnType<typeof colorUtils.getColor>;
+export type colorsType = ReturnType<typeof colorUtils.getColor>;
 
 const useColors = (limit: number = 100): colorsType[] => {
   let colors = [];

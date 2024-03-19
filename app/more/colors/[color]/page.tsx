@@ -2,14 +2,13 @@ import utils from "@/lib/utils";
 
 interface propsType {
   params: {
-    color : string
-    }
+    color: string;
+  };
 }
 
 const Tools = ({ params }: propsType) => {
-  
   const utility = new utils(`#${params.color}`);
-  
+
   return (
     <div>
       <span className="loading loading-dots loading-lg"></span>
