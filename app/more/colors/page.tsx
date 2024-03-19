@@ -1,6 +1,6 @@
 import useColors from "@/hooks/useColors";
 import Link from "next/link";
-import { MdAddCircleOutline } from "react-icons/md";
+import Addcolor from "@/components/Addcolor";
 
 const Tools = () => {
   const colors = useColors(600);
@@ -24,7 +24,12 @@ const Tools = () => {
           >
             {color.hexa.main.string.toUpperCase()}
           </Link>
-          <MdAddCircleOutline className="text-2xl mr-2" />
+          <Addcolor
+            data={{
+              color: color.hexa.main.string,
+              id: crypto.randomUUID(),
+            }}
+          />
         </div>
       ))}
     </div>

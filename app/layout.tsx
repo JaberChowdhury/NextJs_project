@@ -18,15 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="sunset" lang="en">
-      <body
-        style={roboto.style}
-        className="container mx-auto px-4 flex items-center relative flex-col"
-      >
-        <Navbar />
-        <main>
-          <StoreProvider>{children}</StoreProvider>
-        </main>
-      </body>
+      <StoreProvider>
+        <body
+          style={roboto.style}
+          className="container mx-auto px-4 flex items-center relative flex-col"
+        >
+          <Navbar />
+          <main>{children}</main>
+        </body>
+      </StoreProvider>
     </html>
   );
 }
