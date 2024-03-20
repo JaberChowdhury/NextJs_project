@@ -18,13 +18,20 @@ const Addcolor = ({ data }: propsType) => {
   const dispatch = useAppDispatch();
   const { colors } = useAppSelector(colorstoreSelector);
 
+  const filtered_color = colors.filter((color) => {
+    return color.color === data.color;
+  });
+
   return (
     <div>
-      <MdAddCircleOutline
-        onClick={() => dispatch(addColor({ color: data }))}
-        className="text-2xl mr-2"
-      />
-      <GrRadialSelected className="text-2xl mr-2 hidden" />
+      {filtered_color.length > 0 ? (
+        <GrRadialSelected className="text-2xl mr-2 text-green-400" />
+      ) : (
+        <MdAddCircleOutline
+          onClick={() => dispatch(addColor({ color: data }))}
+          className="text-2xl mr-2"
+        />
+      )}
     </div>
   );
 };

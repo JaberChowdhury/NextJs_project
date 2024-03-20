@@ -1,16 +1,20 @@
 "use client";
-
+import { GiCancel } from "react-icons/gi";
 import Link from "next/link";
 import tools from "@/constant/tools";
 import type { TOOL } from "@/constant/tools";
 import more from "@/constant/more";
 
-import { useAppSelector } from "@/lib/hooks";
-import { colorstoreSelector } from "@/lib/features/colorstore/colorstoreSlice";
+import { useAppSelector, useAppDispatch } from "@/lib/hooks";
+import {
+  colorstoreSelector,
+  deleteColor,
+} from "@/lib/features/colorstore/colorstoreSlice";
 
 const Navlist = () => {
   const pathList: TOOL[] = [...tools, ...more];
 
+  const dispatch = useAppDispatch();
   const { colors } = useAppSelector(colorstoreSelector);
 
   return (
@@ -39,6 +43,10 @@ const Navlist = () => {
           <Link className="ml-7" href={`/more/colors/`}>
             {color.color.toUpperCase()}
           </Link>
+          <GiCancel
+            onClick={() => dispatch(deleteColor({ id: color.id }))}
+            className="text-2xl"
+          />
         </div>
       ))}
     </ul>
