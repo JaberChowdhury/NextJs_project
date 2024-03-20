@@ -45,7 +45,7 @@ const Navlist = () => {
           </Link>
           <GiCancel
             onClick={() => dispatch(deleteColor({ id: color.id }))}
-            className="text-2xl"
+            className="text-2xl mr-2"
           />
         </div>
       ))}

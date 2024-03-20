@@ -1,4 +1,5 @@
 import utils from "@/lib/utils";
+import Code from "@/components/Code";
 
 interface propsType {
   params: {
@@ -13,7 +14,7 @@ const Tools = ({ params }: propsType) => {
     <div>
       <span className="loading loading-dots loading-lg"></span>
       <div>{params.color}</div>
-      <div className="p-2">{JSON.stringify(utility.getColor())}</div>
+      <Code code={JSON.stringify(utility.getColor())} />
     </div>
   );
 };
