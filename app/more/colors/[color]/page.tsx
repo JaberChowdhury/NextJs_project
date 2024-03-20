@@ -1,5 +1,10 @@
-import utils from "@/lib/utils";
-import Code from "@/components/Code";
+import dynamic from "next/dynamic";
+import useAnalyseColor from "@/hooks/useAnalyseColor";
+const Code = dynamic(() => import("@/components/Code"));
+const HexaComponent = dynamic(() => import("@/components/HexaComponent"));
+const HslComponent = dynamic(() => import("@/components/HslComponent"));
+const RgbComponent = dynamic(() => import("@/components/RgbComponent"));
+const Colordisplay = dynamic(() => import("@/components/Colordisplay"));
 
 interface propsType {
   params: {
@@ -8,13 +13,25 @@ interface propsType {
 }
 
 const Tools = ({ params }: propsType) => {
-  const utility = new utils(`#${params.color}`);
+  const { data, mainRgb, mainHsl, oppositeRgb, oppositeHsl } = useAnalyseColor(
+    "#" + params.color,
+  );
 
   return (
-    <div>
-      <span className="loading loading-dots loading-lg"></span>
-      <div>{params.color}</div>
-      <Code code={JSON.stringify(utility.getColor())} />
+    <div className="w-full min-h-screen my-4 flex justify-center flex-col gap-y-6">
+      <Colordisplay color={params.color} />
+
+      <b className="underline text-2xl">Analysis:</b>
+      <RgbComponent title="main" data={mainRgb} />
+      <RgbComponent title="opposite" data={oppositeRgb} />
+      <HslComponent title="main" data={mainHsl} />
+      <HslComponent title="opposite" data={oppositeHsl} />
+      <HexaComponent title="main" data={params.color} />
+      <HexaComponent
+        title="opposite"
+        data={data.hexa.opposite.string.replace("#", "")}
+      />
+      <Code hl={[8, 14, 22, 28, 36, 42]} code={JSON.stringify(data, null, 2)} />
     </div>
   );
 };

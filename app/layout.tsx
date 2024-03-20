@@ -17,14 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html data-theme="sunset" lang="en">
+    <html data-theme="dim" lang="en">
       <StoreProvider>
         <body
           style={roboto.style}
           className="container mx-auto px-4 flex items-center relative flex-col"
         >
           <Navbar />
-          <main>{children}</main>
+          <main className="w-full flex justify-center items-center flex-col relative">
+            {children}
+          </main>
         </body>
       </StoreProvider>
     </html>

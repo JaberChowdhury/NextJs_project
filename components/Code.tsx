@@ -9,14 +9,15 @@ const Hignlighter = ({ code, hl }: propsType) => {
   const array = code.toString().split("\n");
 
   return (
-    <pre className="w-full">
+    <div className="w-full">
       <div className="mockup-code rounded">
         {array.map((line: string, index: number) => {
           if (hl && hl.includes(index + 1)) {
             return (
               <pre className="text-warning" key={index} data-prefix={index + 1}>
                 <code>
-                  <Gradienttext text={line} />
+                  {/*<Gradienttext text={line} />*/}
+                  {line}
                 </code>
               </pre>
             );
@@ -28,7 +29,7 @@ const Hignlighter = ({ code, hl }: propsType) => {
           );
         })}
       </div>
-    </pre>
+    </div>
   );
 };
 

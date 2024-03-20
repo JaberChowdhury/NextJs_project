@@ -6,11 +6,11 @@ const Tools = () => {
   const colors = useColors(600);
 
   return (
-    <div className="w-full z-10 min-h-screen grid grid-cols-2 md:grid-cols-4 justify-center items-center">
+    <div className="w-full z-10 min-h-screen grid grid-cols-2 md:grid-cols-4">
       {colors.map((color) => (
         <div
           key={color.id}
-          className="w-[150px] h-10 border border-slate-100 m-2 flex justify-between items-center rounded overflow-hidden relative"
+          className="w-[150px] h-10 border border-slate-100 flex justify-between items-center m-auto my-2 rounded overflow-hidden relative"
         >
           <div
             className="w-6 h-full absolute left-0 "
