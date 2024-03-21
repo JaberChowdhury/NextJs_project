@@ -24,13 +24,13 @@ const Tools = ({ params }: propsType) => {
       <b className="underline text-2xl">Analysis:</b>
       <RgbComponent title="main" data={mainRgb} />
       <RgbComponent title="opposite" data={oppositeRgb} />
-      <HslComponent title="main" data={mainHsl} />
-      <HslComponent title="opposite" data={oppositeHsl} />
       <HexaComponent title="main" data={params.color} />
       <HexaComponent
         title="opposite"
         data={data.hexa.opposite.string.replace("#", "")}
       />
+      <HslComponent title="main" data={mainHsl} />
+      <HslComponent title="opposite" data={oppositeHsl} />
       <Code hl={[8, 14, 22, 28, 36, 42]} code={JSON.stringify(data, null, 2)} />
     </div>
   );

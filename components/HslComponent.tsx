@@ -17,10 +17,8 @@ const HslComponent: React.FC<PropsType> = ({ title, data }) => {
         {data.map((item) => {
           const converted_number = (Number(item.value) / 360) * 100;
           const customStyles = {
-            "--value":
-              item.title === "Hue" ? converted_number + "%" : item.value,
+            "--value": item.title === "Hue" ? converted_number : item.value,
           } as any; // Type assertion to 'any'
-
           return (
             <div
               className="flex justify-center items-center flex-col gap-y-2"
