@@ -96,23 +96,26 @@ class Colorutils {
         }
 
         const colorArray = color.split("");
-        const r = parseInt(colorArray[0] + colorArray[1], 16);
-        const g = parseInt(colorArray[2] + colorArray[3], 16);
-        const b = parseInt(colorArray[4] + colorArray[5], 16);
+        dataObject.main.r = colorArray[0] + colorArray[1];
+        dataObject.main.g = colorArray[2] + colorArray[3];
+        dataObject.main.b = colorArray[4] + colorArray[5];
 
-        dataObject.main.r = r.toString(16).padStart(2, r.toString(16));
-        dataObject.main.g = g.toString(16).padStart(2, g.toString(16));
-        dataObject.main.b = b.toString(16).padStart(2, b.toString(16));
+        const pos_r1 = this.hexadecimalCode.main.indexOf(colorArray[0]);
+        const pos_r2 = this.hexadecimalCode.main.indexOf(colorArray[1]);
+        const pos_g1 = this.hexadecimalCode.main.indexOf(colorArray[2]);
+        const pos_g2 = this.hexadecimalCode.main.indexOf(colorArray[3]);
+        const pos_b1 = this.hexadecimalCode.main.indexOf(colorArray[4]);
+        const pos_b2 = this.hexadecimalCode.main.indexOf(colorArray[5]);
 
-        dataObject.opposite.r = (255 - r)
-          .toString(16)
-          .padStart(2, (255 - r).toString(16));
-        dataObject.opposite.g = (255 - g)
-          .toString(16)
-          .padStart(2, (255 - g).toString(16));
-        dataObject.opposite.b = (255 - b)
-          .toString(16)
-          .padStart(2, (255 - b).toString(16));
+        dataObject.opposite.r =
+          this.hexadecimalCode.opposite[pos_r1] +
+          this.hexadecimalCode.opposite[pos_r2];
+        dataObject.opposite.g =
+          this.hexadecimalCode.opposite[pos_g1] +
+          this.hexadecimalCode.opposite[pos_g2];
+        dataObject.opposite.b =
+          this.hexadecimalCode.opposite[pos_b1] +
+          this.hexadecimalCode.opposite[pos_b2];
 
         dataObject.main.string =
           "#" + dataObject.main.r + dataObject.main.g + dataObject.main.b;
@@ -305,6 +308,58 @@ class Colorutils {
     }
   }
 
+  getVariant() {
+    const color = this.inputColor || this.setInputColor();
+    const replaceDigitAtPosition = (
+      originalString: string,
+      position: number,
+      replacementDigit: string,
+    ) => {
+      if (position >= 0 && position < originalString.length) {
+        const modifiedString =
+          originalString.substring(0, position) +
+          replacementDigit +
+          originalString.substring(position + 1);
+        return modifiedString;
+      } else {
+        console.log("Invalid position.");
+        return originalString;
+      }
+    };
+
+    const Eachvariant = (c: string, position: number) => {
+      const code = c.replace("#", "");
+      const hexacode = "0123456789abcdef".split("");
+      const variant = [];
+      for (let i = 0; i < hexacode.length; i++) {
+        const slice = replaceDigitAtPosition(code, position, hexacode[i]);
+        variant.push("#" + slice);
+      }
+      return variant;
+    };
+    const fullVariant = (color: string) => {
+      const final = [];
+      for (let i = 0; i < 6; i++) {
+        final.push(Eachvariant(color, i));
+      }
+      return final;
+    };
+
+    const refine_data = this.getHexadecimalColor();
+
+    const colors = [
+      refine_data.main.string.replace("#", ""),
+      refine_data.opposite.string.replace("#", ""),
+    ];
+    const variant = colors.map((d) => {
+      return fullVariant(d);
+    });
+    return {
+      main: variant[0],
+      opposite: variant[1],
+    };
+  }
+
   getColor() {
     this.setInputColor();
     return {
@@ -312,6 +367,7 @@ class Colorutils {
       hexa: this.getHexadecimalColor(),
       rgb: this.getRgbColor(),
       hsl: this.getHslColor(),
+      variant: this.getVariant(),
     };
   }
 }

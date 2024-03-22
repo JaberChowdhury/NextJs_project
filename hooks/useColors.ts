@@ -1,5 +1,3 @@
-"use server";
-
 import utils from "@/lib/utils";
 
 const colorUtils = new utils();

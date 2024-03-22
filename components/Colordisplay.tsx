@@ -24,23 +24,22 @@ const Colordisplay = ({ color }: propsType) => {
         className="w-full h-[20px] my-2 rounded shadow-md"
       />
       <div className="w-full [&>*]:m-1 flex justify-center items-center relative">
-        <Link
+        <div
           style={{
             backgroundColor: data.hexa.main.string,
             color: data.hexa.opposite.string,
           }}
           className="w-full h-20 rounded flex justify-center items-center"
-          href="/"
         >
           {data.hexa.main.string}
-        </Link>
+        </div>
         <Link
           style={{
             backgroundColor: data.hexa.opposite.string,
             color: data.hexa.main.string,
           }}
           className="w-full h-20 rounded flex justify-center items-center"
-          href="/"
+          href={`/more/colors/${data.hexa.opposite.string.replace("#", "")}`}
         >
           {data.hexa.opposite.string}
         </Link>

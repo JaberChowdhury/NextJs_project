@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/counter/counterSlice";
 import colorstoreReducer from "./features/colorstore/colorstoreSlice";
+import colorsReducer from "./features/colors/colorsSlice";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       counter: counterReducer,
       colorstore: colorstoreReducer,
+      colors: colorsReducer,
     },
   });
 };

@@ -20,7 +20,6 @@ const Tools = ({ params }: propsType) => {
   return (
     <div className="w-full min-h-screen my-4 flex justify-center flex-col gap-y-6">
       <Colordisplay color={params.color} />
-
       <b className="underline text-2xl">Analysis:</b>
       <RgbComponent title="main" data={mainRgb} />
       <RgbComponent title="opposite" data={oppositeRgb} />
