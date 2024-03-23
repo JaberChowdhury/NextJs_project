@@ -367,7 +367,6 @@ class Colorutils {
       hexa: this.getHexadecimalColor(),
       rgb: this.getRgbColor(),
       hsl: this.getHslColor(),
-      variant: this.getVariant(),
     };
   }
 }
