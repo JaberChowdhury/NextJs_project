@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "fmt": "pnpm dlx prettier --cache -w .",
-    "check": "npx prettier --cache -w . && npm run lint && tsc --watch"
+    "check": "npx prettier --cache -w . && npm run lint && tsc --watch",
+    "deploy": "next export && gh-pages -d ."
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
