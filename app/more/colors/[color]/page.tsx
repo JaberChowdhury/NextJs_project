@@ -13,7 +13,13 @@ interface propsType {
 }
 
 const Tools = async ({ params }: propsType) => {
-  const req = await fetch(`http://localhost:5173//api/colors/${params.color}`);
+  const hostname =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:5173"
+      : "https://next-js-project-neon-ten.vercel.app";
+
+  const req = await fetch(`${hostname}/api/colors/${params.color}`);
+  // const req = await fetch(`/api/colors/${params.color}`);
   const res = await req.json();
   const { data, mainRgb, mainHsl, oppositeRgb, oppositeHsl } = await res;
 

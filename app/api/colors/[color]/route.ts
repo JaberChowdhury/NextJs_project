@@ -1,9 +1,9 @@
 import useAnalyseColor from "@/hooks/useAnalyseColor";
 
-export async function GET(
+export const GET = async (
   request: Request,
   { params }: { params: { color: string } },
-) {
+) => {
   const { color } = params;
 
   console.log({ color });
@@ -11,4 +11,4 @@ export async function GET(
   return new Response(JSON.stringify(data), {
     status: 200,
   });
-}
+};
