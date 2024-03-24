@@ -14,7 +14,7 @@ const makeColors = (limit: number = 100): colorsType[] => {
 };
 
 const initialState = {
-  colors: makeColors(60),
+  colors: makeColors(600),
 };
 
 const colorsSlice = createSlice({
@@ -22,7 +22,7 @@ const colorsSlice = createSlice({
   initialState,
   reducers: {
     updateColors: (state) => {
-      state.colors = makeColors(60);
+      state.colors = makeColors(600);
     },
   },
 });
