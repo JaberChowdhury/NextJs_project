@@ -40,7 +40,7 @@ const Navlist = () => {
               backgroundColor: color.color,
             }}
           />
-          <Link className="ml-7" href={`/more/colors/`}>
+          <Link className="ml-7" href={`/more/colors/${color.color.replace("#","")}`}>
             {color.color.toUpperCase()}
           </Link>
           <GiCancel
