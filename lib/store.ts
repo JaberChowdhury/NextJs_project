@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./features/counter/counterSlice";
 import colorstoreReducer from "./features/colorstore/colorstoreSlice";
 import colorsReducer from "./features/colors/colorsSlice";
+import rgbReducer from "./features/rgb/rgbSlice";
 
 export const makeStore = () => {
   return configureStore({
@@ -9,6 +10,7 @@ export const makeStore = () => {
       counter: counterReducer,
       colorstore: colorstoreReducer,
       colors: colorsReducer,
+      rgb: rgbReducer,
     },
   });
 };
