@@ -10,7 +10,7 @@ export async function generateStaticParams() {
   return data;
 }
 
-const getSurah = async (id:string) => {
+const getSurah = async (id: string) => {
   const res = await fetch(
     `https://quranenc.com/api/v1/translation/sura/english_saheeh/${id}`,
   );
@@ -19,12 +19,12 @@ const getSurah = async (id:string) => {
 };
 
 interface propsType {
-  params : {
-    id : string
-  }
+  params: {
+    id: string;
+  };
 }
 
-const Surah = async ({ params }:propsType) => {
+const Surah = async ({ params }: propsType) => {
   const data = await getSurah(params.id);
 
   return (
