@@ -1,9 +1,9 @@
 <h1 align="center">NextJs-project</h1>
 <hr />
 
-## Branch : starter-code
+## Branch : generate-static-page
 
-## Description : starter code with shadcn setup
+## Description : testing static site generation in next 14 app router with dynamic perameter
 
 <hr />
 
