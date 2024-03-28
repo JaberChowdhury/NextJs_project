@@ -1,9 +1,9 @@
 <h1 align="center">NextJs-project</h1>
 <hr />
 
-## Branch : generate-static-page
+## Branch : with-nextra
 
-## Description : testing static site generation in next 14 app router with dynamic perameter
+## Description : trying doc website with mdx support
 
 <hr />
 
