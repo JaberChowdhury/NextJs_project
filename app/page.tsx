@@ -1,6 +1,21 @@
 import Link from "next/link";
 
 const Home = () => {
+  const Items = [
+    {
+      title: "Tools",
+      to: "/tools",
+    },
+    {
+      title: "More",
+      to: "/more",
+    },
+    {
+      title: "Codes",
+      to: "/codes",
+    },
+  ];
+
   return (
     <div className="hero min-h-screen">
       <div className="hero-content text-center">
@@ -12,12 +27,11 @@ const Home = () => {
             <b>Generate, convert, mix </b> the colors from the various aspects.
           </p>
           <div className="flex justify-center  items-center gap-x-2">
-            <Link href="/tools">
-              <button className="btn btn-primary">Tools</button>
-            </Link>
-            <Link href="/more">
-              <button className="btn btn-primary">More</button>
-            </Link>
+            {Items.map((item) => (
+              <Link key={item.title} href={item.to}>
+                <button className="btn btn-primary">{item.title}</button>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -26,8 +26,6 @@ const Tools = async ({ params }: propsType) => {
   return (
     <div className="w-full min-h-screen my-4 flex justify-center flex-col gap-y-6">
       <Colordisplay color={params.color} />
-      <Colorvariant color={"#" + params.color} />
-
       <b className="underline text-2xl">Analysis:</b>
       <RgbComponent title="main" data={mainRgb} />
       <RgbComponent title="opposite" data={oppositeRgb} />
@@ -38,6 +36,7 @@ const Tools = async ({ params }: propsType) => {
       />
       <HslComponent title="main" data={mainHsl} />
       <HslComponent title="opposite" data={oppositeHsl} />
+      <Colorvariant color={"#" + params.color} />
       <Code hl={[8, 14, 22, 28, 36, 42]} code={JSON.stringify(data, null, 2)} />
     </div>
   );
