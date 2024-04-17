@@ -1,5 +1,11 @@
+import Counter from "@/lib/features/counter/Counterview";
+
 const Tools = () => {
-  return <span className="loading loading-dots loading-lg"></span>;
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
 };
 
 export default Tools;
