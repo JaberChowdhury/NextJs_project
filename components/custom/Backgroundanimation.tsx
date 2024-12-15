@@ -1,0 +1,41 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import Particles from "@/ui/particles";
+import colorutils from "@/lib/colorUtils/main";
+
+type propsType = {
+  component?: React.ReactNode;
+};
+
+function ParticlesDemo({ component }: propsType) {
+  const utils = new colorutils();
+
+  const { resolvedTheme } = useTheme();
+  const [color, setColor] = useState(utils.makeHexadecimal().main.color);
+
+  useEffect(() => {
+    // setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
+    setColor(
+      resolvedTheme === "dark"
+        ? utils.makeHexadecimal().main.color
+        : utils.makeHexadecimal().opposite.color
+    );
+  }, [resolvedTheme]);
+
+  return (
+    <div className=" flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+      {component}
+      <Particles
+        className="absolute inset-0"
+        quantity={1000}
+        ease={80}
+        color={color}
+        refresh
+      />
+    </div>
+  );
+}
+
+export default ParticlesDemo;
