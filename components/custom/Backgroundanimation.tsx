@@ -22,7 +22,7 @@ function ParticlesDemo({ component }: propsType) {
         ? utils.makeHexadecimal().main.color
         : utils.makeHexadecimal().opposite.color
     );
-  }, [resolvedTheme]);
+  }, [resolvedTheme, utils]);
 
   return (
     <div className=" flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
