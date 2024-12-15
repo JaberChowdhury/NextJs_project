@@ -68,6 +68,7 @@ const Particles: React.FC<ParticlesProps> = ({
   vx = 0,
   vy = 0,
 }) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
@@ -92,13 +93,13 @@ const Particles: React.FC<ParticlesProps> = ({
       }
       window.removeEventListener("resize", initCanvas);
     };
-    //}, [color]);
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [color]);
 
   useEffect(() => {
     onMouseMove();
-    // }, [mousePosition.x, mousePosition.y]);
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mousePosition.x, mousePosition.y]);
 
   const initCanvas = () => {
     resizeCanvas();
