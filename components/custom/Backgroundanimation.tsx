@@ -17,12 +17,8 @@ function ParticlesDemo({ component }: propsType) {
 
   useEffect(() => {
     // setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");
-    setColor(
-      resolvedTheme === "dark"
-        ? utils.makeHexadecimal().main.color
-        : utils.makeHexadecimal().opposite.color
-    );
-  }, [resolvedTheme, utils]);
+    setColor(resolvedTheme === "dark" ? color : color);
+  }, [resolvedTheme, color]);
 
   return (
     <div className=" flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">

@@ -8,16 +8,16 @@ function makeHexadecimal(): HEXADECIMAL {
   const position4 = Math.floor(Math.random() * hexadecimal.length);
   const position5 = Math.floor(Math.random() * hexadecimal.length);
   const position6 = Math.floor(Math.random() * hexadecimal.length);
-  let r1 = hexadecimal[position1] + hexadecimal[position4];
-  let g1 = hexadecimal[position2] + hexadecimal[position5];
-  let b1 = hexadecimal[position3] + hexadecimal[position6];
-  let r2 =
+  const r1 = hexadecimal[position1] + hexadecimal[position4];
+  const g1 = hexadecimal[position2] + hexadecimal[position5];
+  const b1 = hexadecimal[position3] + hexadecimal[position6];
+  const r2 =
     hexadecimal.slice().reverse()[position1] +
     hexadecimal.slice().reverse()[position4];
-  let g2 =
+  const g2 =
     hexadecimal.slice().reverse()[position2] +
     hexadecimal.slice().reverse()[position5];
-  let b2 =
+  const b2 =
     hexadecimal.slice().reverse()[position3] +
     hexadecimal.slice().reverse()[position6];
   return {

@@ -5,8 +5,8 @@ import HexadecimalModifier from "./HexadecimalModifier";
 import makeOppositeHexadecimal from "./makeOppositeHexadecimal";
 
 function rearrangeList(arr: MAKE_VARIANT) {
-  let oddIndexed = [];
-  let evenIndexed = [];
+  const oddIndexed = [];
+  const evenIndexed = [];
 
   for (let i = 0; i < arr.length; i++) {
     if (i % 2 === 0) {
@@ -21,11 +21,11 @@ function rearrangeList(arr: MAKE_VARIANT) {
 const makeVariant = (input_color: string): MAKE_VARIANT => {
   const hsl = makeHexaToHSL(input_color);
 
-  let hsl_variant = [];
+  const hsl_variant = [];
   for (let i = 1; i < 100; i++) {
     const new_hsl = { ...hsl, color: `hsl(${hsl.h},${hsl.s},${i})`, l: i };
     const hexadecimal = HexadecimalModifier(
-      makeHslToHexadecimal(new_hsl.h, new_hsl.s, new_hsl.l),
+      makeHslToHexadecimal(new_hsl.h, new_hsl.s, new_hsl.l)
     );
     const opposite_hexadecimal = makeOppositeHexadecimal(hexadecimal.color);
 

@@ -92,7 +92,7 @@ class Utils {
     makeVariant(input_color);
 
   public generateColors = (limit: number): HEXADECIMAL[] => {
-    let colors: HEXADECIMAL[] = [];
+    const colors: HEXADECIMAL[] = [];
     for (let i = 0; i < limit; i++) {
       colors.push(this.makeHexadecimal());
     }
