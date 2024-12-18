@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import DotPattern from "@/components/ui/dot-pattern";
+import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +35,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${inter.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <DotPattern
+          className={cn(
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] -z-10"
+          )}
+        />
       </body>
     </html>
   );

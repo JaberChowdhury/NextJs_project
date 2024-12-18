@@ -24,6 +24,8 @@ import makeOppositeHSL from "./makeOppositeHSL";
 import makeOppositeRGBA from "./makeOppositeRGBA";
 
 import makeVariant from "./makeVariant";
+import generateDarkColorVariant from "./generateDarkColorVariant";
+import generateLightColorVariant from "./generateLightColorVariant";
 
 class Utils {
   private color: string;
@@ -98,6 +100,11 @@ class Utils {
     }
     return colors;
   };
+
+  public generateDarkColorVariant = (limit: number): HEXADECIMAL[] =>
+    generateDarkColorVariant(limit);
+  public generateLightColorVariant = (limit: number): HEXADECIMAL[] =>
+    generateLightColorVariant(limit);
 
   public getColor = (): GET_COLOR => {
     return {

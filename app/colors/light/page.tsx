@@ -6,16 +6,14 @@ import ShinyButton from "@/ui/shiny-button";
 
 const page = async () => {
   const colorUtils = new utils();
-  const colors = colorUtils.generateColors(500);
+  const limit = 500;
+  const colors = colorUtils.generateLightColorVariant(limit);
 
   return (
     <div className="w-full">
       <div className="w-full flex justify-center items-center my-5 gap-2">
         <Link href="/colors/dark">
           <ShinyButton className="border-2">Dark ColorS</ShinyButton>
-        </Link>{" "}
-        <Link href="/colors/light">
-          <ShinyButton className="border-2">Light ColorS</ShinyButton>
         </Link>
       </div>
       <div className="w-full flex justify-center items-center flex-wrap">

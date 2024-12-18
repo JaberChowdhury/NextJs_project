@@ -4,14 +4,12 @@ import utils from "@/lib/colorUtils/main";
 import { MagicCard } from "@/ui/magic-card";
 import AnimatedCircularProgressBar from "@/ui/animated-circular-progress-bar";
 
-
 type propsType = {
   main: string;
   opposite: string;
 };
 
 const ColorCode = ({ color }: { color: string }) => {
-  console.log(color.split(""));
   return (
     <div className="w-full grid grid-cols-7 justify-center items-center">
       {color.split("").map((digit) => (
