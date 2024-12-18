@@ -18,7 +18,8 @@ function Card({ main, opposite, key }: propsType) {
         className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
         gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
       >
-        Magic
+        <div>{main}</div>
+        <div>{opposite}</div>
       </MagicCard>
     </div>
   );

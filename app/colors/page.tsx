@@ -10,8 +10,8 @@ const page = () => {
 
   return (
     <div className="w-full min-h-screen flex justify-center items-center relative flex-wrap">
-      {colors.map((data, id) => {
-        return <Card key={id} />;
+      {colors.map((data, id: number) => {
+        return <Card main="#123442" opposite="#534785" key={id} />;
       })}
     </div>
   );
