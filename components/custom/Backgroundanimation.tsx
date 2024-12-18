@@ -21,7 +21,7 @@ function ParticlesDemo({ component }: propsType) {
   }, [resolvedTheme, color]);
 
   return (
-    <div className=" flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+    <div className=" flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
       {component}
       <Particles
         className="absolute inset-0"

@@ -15,9 +15,10 @@ export function MagicCard({
   children,
   className,
   gradientSize = 200,
-  gradientColor = "#262626",
-  gradientOpacity = 0.8,
-}: MagicCardProps) {
+  gradientColor = "#000000",
+  //gradientColor = "#262626",
+  gradientOpacity = 1,
+}: MagicCardProps): React.JSX.Element {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
   const mouseY = useMotionValue(-gradientSize);
@@ -32,7 +33,7 @@ export function MagicCard({
         mouseY.set(clientY - top);
       }
     },
-    [mouseX, mouseY],
+    [mouseX, mouseY]
   );
 
   const handleMouseOut = useCallback(
@@ -43,7 +44,7 @@ export function MagicCard({
         mouseY.set(-gradientSize);
       }
     },
-    [handleMouseMove, mouseX, gradientSize, mouseY],
+    [handleMouseMove, mouseX, gradientSize, mouseY]
   );
 
   const handleMouseEnter = useCallback(() => {
@@ -74,7 +75,7 @@ export function MagicCard({
       ref={cardRef}
       className={cn(
         "group relative flex size-full overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-900 border text-black dark:text-white",
-        className,
+        className
       )}
     >
       <div className="relative z-10">{children}</div>

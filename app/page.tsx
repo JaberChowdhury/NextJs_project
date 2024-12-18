@@ -2,6 +2,7 @@ import SparklesText from "@/ui/sparkles-text";
 import ShinyButton from "@/ui/shiny-button";
 import Ripple from "@/ui/ripple";
 import Link from "next/link";
+import ParticlesDemo from "@/components/custom/Backgroundanimation";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           </Link>
         </div>
       </div>
+      <ParticlesDemo />
     </div>
   );
 };

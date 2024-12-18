@@ -1,25 +1,53 @@
+"use client";
 import { useTheme } from "next-themes";
+import utils from "@/lib/colorUtils/main";
 import { MagicCard } from "@/ui/magic-card";
+import AnimatedCircularProgressBar from "@/ui/animated-circular-progress-bar";
+
 
 type propsType = {
   main: string;
   opposite: string;
-  key: number;
 };
 
-function Card({ main, opposite, key }: propsType) {
-  const { theme } = useTheme();
+const ColorCode = ({ color }: { color: string }) => {
+  console.log(color.split(""));
   return (
-    <div
-      key={key}
-      className={"flex size-32 m-2 flex-col gap-4 lg:h-[250px] lg:flex-row"}
-    >
+    <div className="w-full grid grid-cols-7 justify-center items-center">
+      {color.split("").map((digit) => (
+        <div className="border p-1 text-sm text-center">{digit}</div>
+      ))}
+    </div>
+  );
+};
+
+function Card({ main, opposite }: propsType) {
+  const { theme } = useTheme();
+  const colorUtils = new utils(main);
+  const lightness = colorUtils.generateHSL().main.l;
+
+  return (
+    <div className={"flex m-2 flex-col"}>
       <MagicCard
-        className="cursor-pointer flex-col items-center justify-center shadow-2xl whitespace-nowrap text-4xl"
+        className="min-w-40 min-h-40 p-2 flex justify-center items-center cursor-pointer relative overflow-hidden  shadow-2xl whitespace-nowrap text-xl"
         gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
       >
-        <div>{main}</div>
-        <div>{opposite}</div>
+        <div className="w-40 flex justify-between items-center gap-x-4 relative">
+          <div
+            className="w-full h-9 rounded-full"
+            style={{
+              background: `linear-gradient(45deg, ${main} 50%, ${opposite} 50%)`,
+            }}
+          ></div>
+          <AnimatedCircularProgressBar
+            value={100 - Math.round(lightness)}
+            gaugePrimaryColor="#000000"
+            gaugeSecondaryColor={opposite}
+            className="size-14 text-xl"
+          />
+        </div>
+        <ColorCode color={main} />
+        <ColorCode color={opposite} />
       </MagicCard>
     </div>
   );
