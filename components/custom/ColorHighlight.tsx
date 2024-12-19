@@ -4,7 +4,7 @@ const Codehighlighter = ({ code }: { code: string }) => {
   return (
     <div>
       {code_array.map((data, id) => (
-        <pre data-prefix={id + 1}>
+        <pre key={id} data-prefix={id + 1}>
           <code>{data}</code>
         </pre>
       ))}

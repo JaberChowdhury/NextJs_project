@@ -6,7 +6,7 @@ import ShinyButton from "@/ui/shiny-button";
 
 const page = async () => {
   const colorUtils = new utils();
-  const limit = 500;
+  const limit = 50;
   const colors = colorUtils.generateDarkColorVariant(limit);
 
   return (
@@ -19,12 +19,12 @@ const page = async () => {
       <div className="w-full flex justify-center items-center flex-wrap">
         {colors.map((data, id: number) => {
           return (
-            <Link
-              href={`/colors/info/${data.main.color.replace("#", "")}`}
+            <Card
+              id={id}
               key={id}
-            >
-              <Card main={data.main.color} opposite={data.opposite.color} />
-            </Link>
+              main={data.main.color}
+              opposite={data.opposite.color}
+            />
           );
         })}
       </div>

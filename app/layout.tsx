@@ -3,6 +3,7 @@ import { Geist, Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/custom/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${inter.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
         <DotPattern
           className={cn(
