@@ -73,7 +73,7 @@ export default async function Page({
   const data = colorUtils.getColor();
 
   return (
-    <div className="px-8">
+    <div className="px-2">
       <BlurFade>
         <CardHeader className="text-2xl font-bold">Color:</CardHeader>
       </BlurFade>
