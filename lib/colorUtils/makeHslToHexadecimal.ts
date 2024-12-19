@@ -1,4 +1,4 @@
-const makeHslToHexadecimal = (h: number, s: number, l: number) => {
+const makeHslToHexadecimal = (h: number, s: number, l: number): string => {
   // Normalize hue to be in the range 0 to 360
   h = h % 360;
 

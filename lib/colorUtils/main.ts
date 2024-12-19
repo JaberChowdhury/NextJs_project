@@ -26,6 +26,7 @@ import makeOppositeRGBA from "./makeOppositeRGBA";
 import makeVariant from "./makeVariant";
 import generateDarkColorVariant from "./generateDarkColorVariant";
 import generateLightColorVariant from "./generateLightColorVariant";
+import makeHslToHexadecimal from "./makeHslToHexadecimal";
 
 class Utils {
   private color: string;
@@ -47,6 +48,8 @@ class Utils {
     makeHexaToHSL(input_color);
   public makeHexadecimalToRGBA = (input_color: string): RGBA_COLOR =>
     makeHexadecimalToRGBA(input_color);
+  public makeHslToHexadecimal = (h: number, s: number, l: number): string =>
+    makeHslToHexadecimal(h, s, l);
 
   public makeOppositeHexadecimal = (input_color: string): HEXADECIMAL_COLOR =>
     makeOppositeHexadecimal(input_color);
