@@ -15,10 +15,9 @@ export function MagicCard({
   children,
   className,
   gradientSize = 200,
-  gradientColor = "#000000",
-  //gradientColor = "#262626",
-  gradientOpacity = 1,
-}: MagicCardProps): React.JSX.Element {
+  gradientColor = "#262626",
+  gradientOpacity = 0.8,
+}: MagicCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(-gradientSize);
   const mouseY = useMotionValue(-gradientSize);

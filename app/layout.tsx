@@ -4,6 +4,8 @@ import "./globals.css";
 import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/custom/Navbar";
+import NextTopLoader from "nextjs-toploader";
+import Utils from "@/lib/colorUtils/main";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +32,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const colorUtils = new Utils();
+  const darkColor = colorUtils.generateDarkColorVariant(1);
+  const color = darkColor[0].main.color;
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${inter.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        <NextTopLoader
+          color={color}
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          // showSpinner={true}
+          easing="ease"
+          speed={200}
+          shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+        />
         {children}
         <DotPattern
           className={cn(

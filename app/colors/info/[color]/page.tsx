@@ -1,4 +1,6 @@
 import Card from "@/components/custom/Card";
+import BlurFade from "@/components/ui/blur-fade";
+import { CardHeader } from "@/components/ui/card";
 import Utils from "@/lib/colorUtils/main";
 
 export default async function Page({
@@ -11,7 +13,11 @@ export default async function Page({
   const data = colorUtils.getColor();
 
   return (
-    <div>
+    <div className="px-8">
+      <BlurFade>
+        <CardHeader className="text-2xl font-bold">Color varients:</CardHeader>
+      </BlurFade>
+
       <div className="w-full flex justify-center items-center flex-wrap">
         {data.variant.map((colorVariant, id) => (
           <Card

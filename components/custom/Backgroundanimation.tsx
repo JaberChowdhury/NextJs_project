@@ -13,7 +13,8 @@ function ParticlesDemo({ component }: propsType) {
   const utils = new colorutils();
 
   const { resolvedTheme } = useTheme();
-  const [color, setColor] = useState(utils.makeHexadecimal().main.color);
+  const darkColor = utils.generateDarkColorVariant(1);
+  const [color, setColor] = useState(darkColor[0].main.color);
 
   useEffect(() => {
     // setColor(resolvedTheme === "dark" ? "#ffffff" : "#000000");

@@ -12,12 +12,24 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+const colors: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
+    title: "Dark colors",
+    href: "/colors/dark",
+    description: "Variants of Dark colors",
+  },
+  {
+    title: "Light colors",
+    href: "/colors/light",
+    description: "Variants of Light colors",
+  },
+];
+
+const tools: { title: string; href: string; description: string }[] = [
+  {
+    title: "Coming soon",
     href: "/docs/primitives/alert-dialog",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
@@ -29,10 +41,25 @@ export default function Navbar() {
     <NavigationMenu className="m-2 font-bold">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <ListItem href="/">Home</ListItem>
-        </NavigationMenuItem>{" "}
+          <Link href="/">
+            <ListItem> Home</ListItem>
+          </Link>
+        </NavigationMenuItem>
         <NavigationMenuItem>
-          <ListItem href="/colors">Colors</ListItem>
+          <NavigationMenuTrigger className="font-bold">
+            Colors
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {colors.map((component) => (
+                <Link key={component.title} href={component.href}>
+                  <ListItem title={component.title}>
+                    {component.description}
+                  </ListItem>
+                </Link>
+              ))}
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="font-bold">
@@ -40,14 +67,12 @@ export default function Navbar() {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
+              {tools.map((component) => (
+                <Link key={component.title} href={component.href}>
+                  <ListItem title={component.title}>
+                    {component.description}
+                  </ListItem>
+                </Link>
               ))}
             </ul>
           </NavigationMenuContent>
