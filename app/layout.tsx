@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/custom/Navbar";
 import NextTopLoader from "nextjs-toploader";
 import Utils from "@/lib/colorUtils/main";
+import QueryClientProvider from "@/components/QueryClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,7 +53,7 @@ export default function RootLayout({
           speed={200}
           shadow="0 0 10px #2299DD,0 0 5px #2299DD"
         />
-        {children}
+        <QueryClientProvider> {children}</QueryClientProvider>
         <DotPattern
           className={cn(
             "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] -z-10"
