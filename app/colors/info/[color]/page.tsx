@@ -5,6 +5,7 @@ import BlurFade from "@/components/ui/blur-fade";
 import { CardHeader } from "@/components/ui/card";
 import Utils from "@/lib/colorUtils/main";
 import { GET_COLOR } from "@/lib/colorUtils/TYPES";
+import ColorVariant from "@/components/ColorVariant";
 
 function ColorBox({ data }: { data: GET_COLOR }) {
   return (
@@ -72,33 +73,44 @@ export default async function Page({
   const colorUtils = new Utils("#" + color);
   const data = colorUtils.getColor();
 
+  console.log({ data });
+
   return (
     <div className="px-2">
       <BlurFade>
         <CardHeader className="text-2xl font-bold">Color:</CardHeader>
       </BlurFade>
 
-      <div className="w-full grid md:grid-cols-2 p-2">
+      <div className="w-full grid md:grid-cols-2 gap-y-3 p-2 justify-center items-center">
         <ColorBox data={data} />
-        <div className="w-full flex justify-center items-center flex-col">
-          <HslData data={data.hsl.main} />
-          <HslData data={data.hsl.opposite} />
+        <div className="w-full flex justify-center items-center">
+          <Card
+            main={data.hexadecimal.main.color}
+            opposite={data.hexadecimal.opposite.color}
+          />
+          <Card
+            main={data.hexadecimal.opposite.color}
+            opposite={data.hexadecimal.main.color}
+          />
         </div>
+        <BlurFade className="w-full flex justify-center items-center flex-col">
+          <div className="w-full">
+            <b>Main</b>
+            <HslData data={data.hsl.main} />
+          </div>
+          <div className="w-full">
+            <b>Opposite</b>
+            <HslData data={data.hsl.opposite} />
+          </div>
+        </BlurFade>
       </div>
 
       <BlurFade>
         <CardHeader className="text-2xl font-bold">Color varients:</CardHeader>
       </BlurFade>
-      <div className="w-full flex justify-center items-center flex-wrap">
-        {data.variant.map((colorVariant, id) => (
-          <Card
-            key={id}
-            id={id}
-            main={colorVariant.main.color}
-            opposite={colorVariant.opposite.color}
-          />
-        ))}
-      </div>
+
+      <ColorVariant color={color} />
+
       <BlurFade>
         <CardHeader className="text-2xl font-bold">JSON code:</CardHeader>
       </BlurFade>

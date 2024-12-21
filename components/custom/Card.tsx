@@ -18,7 +18,7 @@ import {
 type propsType = {
   main: string;
   opposite: string;
-  id: number;
+  id?: number;
 };
 
 const ColorCode = ({ color }: { color: string }) => {
@@ -33,7 +33,7 @@ const ColorCode = ({ color }: { color: string }) => {
   );
 };
 
-function Card({ main, opposite, id }: propsType) {
+function Card({ main, opposite, id = 1 }: propsType) {
   const { theme } = useTheme();
   const colorUtils = new utils(main);
   const lightness = colorUtils.generateHSL().main.l;
