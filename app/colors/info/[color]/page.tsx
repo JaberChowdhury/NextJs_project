@@ -73,8 +73,6 @@ export default async function Page({
   const colorUtils = new Utils("#" + color);
   const data = colorUtils.getColor();
 
-  console.log({ data });
-
   return (
     <div className="px-2">
       <BlurFade>

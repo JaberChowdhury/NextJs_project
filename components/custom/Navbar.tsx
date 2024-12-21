@@ -28,10 +28,10 @@ const colors: { title: string; href: string; description: string }[] = [
 
 const tools: { title: string; href: string; description: string }[] = [
   {
-    title: "Coming soon",
-    href: "/docs/primitives/alert-dialog",
+    title: "Lab",
+    href: "/lab",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "Do experiment with colors, generate palettes, and convert colors",
   },
 ];
 

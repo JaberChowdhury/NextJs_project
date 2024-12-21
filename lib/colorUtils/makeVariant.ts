@@ -35,7 +35,8 @@ const makeVariant = (input_color: string): MAKE_VARIANT => {
     });
   }
 
-  return rearrangeList(hsl_variant);
+  // return rearrangeList(hsl_variant);
+  return hsl_variant.reverse();
 };
 
 export default makeVariant;

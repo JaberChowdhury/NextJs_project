@@ -5,7 +5,7 @@ import { MagicCard } from "@/ui/magic-card";
 import AnimatedCircularProgressBar from "@/ui/animated-circular-progress-bar";
 import BlurFade from "../ui/blur-fade";
 import Link from "next/link";
-import { EllipsisVertical, Heart } from "lucide-react";
+import { EllipsisVertical, Heart, Moon, Sun } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -46,11 +46,15 @@ function Card({ main, opposite, id = 1 }: propsType) {
           gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
         >
           <div className="w-full my-1 flex justify-between items-center ">
-            <Heart />
+            {lightness > 50 ? <Sun /> : <Moon />}
             <DropdownMenu>
-              <DropdownMenuTrigger>
-                <EllipsisVertical />
-              </DropdownMenuTrigger>
+              <div className="flex gap-1">
+                <Heart />
+                <DropdownMenuTrigger>
+                  <EllipsisVertical />
+                </DropdownMenuTrigger>
+              </div>
+
               <DropdownMenuContent>
                 <DropdownMenuLabel>Tools</DropdownMenuLabel>
                 <DropdownMenuSeparator />
