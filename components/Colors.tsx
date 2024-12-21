@@ -11,6 +11,7 @@ const Colors = () => {
     queryKey: ["colors"],
     queryFn: getColors,
   });
+
   if (isLoading) return <Loader />;
 
   return (

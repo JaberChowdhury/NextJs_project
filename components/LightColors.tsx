@@ -2,14 +2,14 @@
 import React from "react";
 import Card from "./custom/Card";
 import { useQuery } from "@tanstack/react-query";
-import { getDarkColors } from "@/constant/colorsData";
+import { getLightColors } from "@/constant/colorsData";
 import { HEXADECIMAL } from "@/lib/colorUtils/TYPES";
 import Loader from "@/components/custom/Loader";
 
-const DarkColors = () => {
+const LightColors = () => {
   const { data: colors, isLoading } = useQuery<HEXADECIMAL[]>({
-    queryKey: ["darkcolors"],
-    queryFn: getDarkColors,
+    queryKey: ["lightcolors"],
+    queryFn: getLightColors,
   });
 
   if (isLoading) return <Loader />;
@@ -31,4 +31,4 @@ const DarkColors = () => {
   );
 };
 
-export default DarkColors;
+export default LightColors;
