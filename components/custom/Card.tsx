@@ -14,6 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Copy from "./Copy";
 
 type propsType = {
   main: string;
@@ -23,12 +24,16 @@ type propsType = {
 
 const ColorCode = ({ color }: { color: string }) => {
   return (
-    <div className="w-full grid grid-cols-7 justify-center items-center">
+    <div className="w-full grid grid-cols-8 justify-center items-center border">
       {color.split("").map((digit, id) => (
         <div key={id} className="border p-1 text-sm text-center">
           {digit}
         </div>
       ))}
+      <Copy
+        text={color}
+        className="bg-transparent outline-none border-none shadow-none"
+      />
     </div>
   );
 };
@@ -39,7 +44,7 @@ function Card({ main, opposite, id = 1 }: propsType) {
   const lightness = colorUtils.generateHSL().main.l;
 
   return (
-    <div className="mx-2 my-2">
+    <div className="w-52 mx-2 my-2">
       <BlurFade delay={0.25 + (id / 5) * 0.05}>
         <MagicCard
           className="min-w-40 min-h-40 p-2 flex justify-center items-center cursor-pointer relative overflow-hidden  shadow-2xl whitespace-nowrap text-xl"
@@ -54,7 +59,6 @@ function Card({ main, opposite, id = 1 }: propsType) {
                   <EllipsisVertical />
                 </DropdownMenuTrigger>
               </div>
-
               <DropdownMenuContent>
                 <DropdownMenuLabel>Tools</DropdownMenuLabel>
                 <DropdownMenuSeparator />
@@ -67,7 +71,7 @@ function Card({ main, opposite, id = 1 }: propsType) {
             href={`/colors/info/${main.replace("#", "")}`}
             className={"flex flex-col"}
           >
-            <div className="w-40 flex justify-between items-center gap-x-4 relative">
+            <div className="w-full flex justify-between items-center gap-x-4 relative">
               <div
                 className="w-full h-9 rounded-full"
                 style={{
@@ -81,9 +85,9 @@ function Card({ main, opposite, id = 1 }: propsType) {
                 className="size-14 text-xl"
               />
             </div>
-            <ColorCode color={main} />
-            <ColorCode color={opposite} />
           </Link>
+          <ColorCode color={main} />
+          <ColorCode color={opposite} />
         </MagicCard>
       </BlurFade>
     </div>

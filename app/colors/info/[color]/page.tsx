@@ -6,6 +6,7 @@ import { CardHeader } from "@/components/ui/card";
 import Utils from "@/lib/colorUtils/main";
 import { GET_COLOR } from "@/lib/colorUtils/TYPES";
 import ColorVariant from "@/components/ColorVariant";
+import { Suspense } from "react";
 
 function ColorBox({ data }: { data: GET_COLOR }) {
   return (
@@ -107,7 +108,9 @@ export default async function Page({
         <CardHeader className="text-2xl font-bold">Color varients:</CardHeader>
       </BlurFade>
 
-      <ColorVariant color={color} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ColorVariant color={color} />
+      </Suspense>
 
       <BlurFade>
         <CardHeader className="text-2xl font-bold">JSON code:</CardHeader>
