@@ -24,6 +24,11 @@ const colors: { title: string; href: string; description: string }[] = [
     href: "/colors/light",
     description: "Variants of Light colors",
   },
+  {
+    title: "Favourite colors",
+    href: "/favourite",
+    description: "See all your added favourite colors",
+  },
 ];
 
 const tools: { title: string; href: string; description: string }[] = [

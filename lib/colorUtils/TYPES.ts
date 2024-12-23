@@ -1,9 +1,9 @@
-export type HEXADECIMAL_COLOR = {
+export interface HEXADECIMAL_COLOR {
   color: string;
   r: string;
   g: string;
   b: string;
-};
+}
 
 export type RGB_COLOR = {
   color: string;
