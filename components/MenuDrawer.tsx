@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
@@ -11,6 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
+import { IconButton } from "@mui/material";
 
 type Anchor = "left";
 
@@ -65,9 +65,9 @@ export default function SwipeableTemporaryDrawer({
 
   return (
     <div>
-      <Button onClick={toggleDrawer("left", true)}>
+      <IconButton onClick={toggleDrawer("left", true)} aria-label="delete">
         <MenuIcon />
-      </Button>
+      </IconButton>
       <SwipeableDrawer
         anchor="left"
         open={state["left"]}

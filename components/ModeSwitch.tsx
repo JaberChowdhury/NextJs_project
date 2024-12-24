@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import { useColorScheme } from "@mui/material/styles";
 import ModeNightRoundedIcon from "@mui/icons-material/ModeNightRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import { IconButton } from "@mui/material";
 
 export default function ModeSwitch() {
   const { mode, setMode } = useColorScheme();
@@ -21,7 +22,9 @@ export default function ModeSwitch() {
       }}
       onClick={() => setMode(mode === "dark" ? "light" : "dark")}
     >
-      {mode === "dark" ? <ModeNightRoundedIcon /> : <LightModeRoundedIcon />}
+      <IconButton aria-label="delete">
+        {mode === "dark" ? <ModeNightRoundedIcon /> : <LightModeRoundedIcon />}
+      </IconButton>
     </Box>
   );
 }
