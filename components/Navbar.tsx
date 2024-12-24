@@ -13,12 +13,6 @@ import MenuDrawer from "./MenuDrawer";
 const pages = ["Products", "Pricing", "Blog"];
 
 function ResponsiveAppBar() {
-  const [_, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -67,7 +61,6 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
