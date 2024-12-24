@@ -8,6 +8,21 @@ const roboto = Roboto({
   display: "swap",
 });
 
+const styles = {
+  dark: {
+    backgroundColor: "#000000",
+    opacity: 1,
+    backgroundSize: "12px 12px",
+    backgroundImage: "radial-gradient(#ffffff 0.6px, #000000 0.6px)",
+  },
+  light: {
+    backgroundColor: "#ffffff",
+    opacity: 1,
+    backgroundSize: "12px 12px",
+    backgroundImage: "radial-gradient(#000000 0.6px, #ffffff 0.6px)",
+  },
+};
+
 const theme = createTheme({
   colorSchemes: { light: true, dark: true },
   cssVariables: {

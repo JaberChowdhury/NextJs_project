@@ -9,8 +9,9 @@ import Button from "@mui/material/Button";
 import AdbIcon from "@mui/icons-material/Adb";
 import ModeSwitch from "./ModeSwitch";
 import MenuDrawer from "./MenuDrawer";
+import Link from "next/link";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["colors", "darkcolor", "lightcolor", "about"];
 
 function ResponsiveAppBar() {
   return (
@@ -21,8 +22,8 @@ function ResponsiveAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+            component={Link}
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -33,7 +34,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            COLOROCEAN
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <MenuDrawer pages={pages} />
@@ -42,7 +43,7 @@ function ResponsiveAppBar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
+            component={Link}
             href="/"
             sx={{
               mr: 2,
