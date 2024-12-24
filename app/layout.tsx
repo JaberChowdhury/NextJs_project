@@ -4,8 +4,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/theme";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
-
 import Navbar from "@/components/Navbar";
+import QueryProvider from "@/components/provider/QueryClientProvider";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -13,11 +13,13 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <InitColorSchemeScript attribute="class" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Navbar />
-            {props.children}
-          </ThemeProvider>
+          <QueryProvider>
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <Navbar />
+              {props.children}
+            </ThemeProvider>{" "}
+          </QueryProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

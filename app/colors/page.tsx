@@ -1,9 +1,12 @@
-import React from 'react'
+import Color from "@/components/Color";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <Color />
+    </div>
+  );
+};
 
-export default page
+export default page;
