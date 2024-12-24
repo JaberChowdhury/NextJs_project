@@ -12,7 +12,6 @@ import DialogOptions from "./DialogOptions";
 type propsType = {
   main: string;
   opposite: string;
-  id?: number;
 };
 
 const ColorGrid = ({ color }: { color: string }) => {
@@ -45,11 +44,11 @@ const ColorGrid = ({ color }: { color: string }) => {
   );
 };
 
-const Card = ({ main, opposite, id }: propsType) => {
+const Card = ({ main, opposite }: propsType) => {
   const colorUtils = new Utils(main);
   const lightness = colorUtils.generateHSL().main.l;
   return (
-    <MuiCard key={id} sx={{ minWidth: 150 }} variant="outlined">
+    <MuiCard sx={{ minWidth: 150 }} variant="outlined">
       <Stack
         direction="row"
         spacing={0.5}
@@ -68,8 +67,12 @@ const Card = ({ main, opposite, id }: propsType) => {
           }}
           spacing={2}
         >
-          <FavoriteBorderOutlinedIcon />
-          <DialogOptions>
+          <FavoriteBorderOutlinedIcon
+            sx={{
+              cursor: "pointer",
+            }}
+          />
+          <DialogOptions main={main} opposite={opposite}>
             <MoreVertOutlinedIcon />
           </DialogOptions>
         </Stack>

@@ -35,4 +35,4 @@ export const getDarkColors = (): Promise<HEXADECIMAL[]> =>
   Promise.resolve([...darkColorsData]);
 
 export const getLightColors = (): Promise<HEXADECIMAL[]> =>
-  Promise.resolve([...darkColorsData]);
+  Promise.resolve([...lightColorsData]);

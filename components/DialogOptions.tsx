@@ -8,7 +8,13 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
+import { Stack, Typography } from "@mui/material";
 
+type propsType = {
+  main: string;
+  opposite: string;
+  children: React.ReactNode;
+};
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,11 +25,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function DialogOptions({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DialogOptions({ main, opposite, children }: propsType) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -36,7 +38,16 @@ export default function DialogOptions({
 
   return (
     <React.Fragment>
-      <Button onClick={handleClickOpen}>{children}</Button>
+      <Button
+        sx={{
+          padding: 0,
+          width: "0",
+          margin: 0,
+        }}
+        onClick={handleClickOpen}
+      >
+        {children}
+      </Button>
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -44,16 +55,35 @@ export default function DialogOptions({
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+        <DialogTitle>Move the color to you favourite tools</DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-slide-description">
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
+          <Stack direction="column" spacing={2}>
+            <Stack
+              direction="row"
+              sx={{
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+              spacing={2}
+            >
+              <Typography>Add to favourite</Typography>
+              <Button variant="contained">Add</Button>
+            </Stack>
+            <Stack
+              direction="row"
+              sx={{
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+              spacing={2}
+            >
+              <Typography>Send to lab</Typography>
+              <Button variant="contained">Send</Button>
+            </Stack>
+          </Stack>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose}>Agree</Button>
+          <Button onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </React.Fragment>

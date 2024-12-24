@@ -10,7 +10,11 @@ import QueryProvider from "@/components/provider/QueryClientProvider";
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body
+        style={{
+          paddingTop: "80px",
+        }}
+      >
         <InitColorSchemeScript attribute="class" />
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <QueryProvider>

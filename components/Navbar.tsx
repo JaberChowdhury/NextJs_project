@@ -11,13 +11,39 @@ import ModeSwitch from "./ModeSwitch";
 import MenuDrawer from "./MenuDrawer";
 import Link from "next/link";
 
-const pages = ["colors", "darkcolor", "lightcolor", "about"];
+const pages = [
+  {
+    name: "Colors",
+    id: "1",
+    link: "/colors",
+  },
+  {
+    name: "Darkcolors",
+    id: "2",
+    link: "/colors/darkcolors",
+  },
+  {
+    name: "Lightcolors",
+    id: "3",
+    link: "/colors/lightcolors",
+  },
+  {
+    name: "About",
+    id: "4",
+    link: "/about",
+  },
+];
 
 function ResponsiveAppBar() {
   return (
     <AppBar
       sx={{
-        marginBottom: 4,
+        position: "fixed",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        top: 0,
+        zIndex: 1000,
       }}
       position="static"
     >
@@ -66,10 +92,12 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.id}
+                component={Link}
+                href={page.link}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>

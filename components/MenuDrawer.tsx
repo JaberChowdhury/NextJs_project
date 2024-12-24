@@ -10,14 +10,19 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
-import { IconButton } from "@mui/material";
+import { Button, IconButton, Link } from "@mui/material";
+import page from "@/app/page";
 
 type Anchor = "left";
 
 export default function SwipeableTemporaryDrawer({
   pages,
 }: {
-  pages: string[];
+  pages: {
+    name: string;
+    id: string;
+    link: string;
+  }[];
 }) {
   const [state, setState] = React.useState({
     top: false,
@@ -48,13 +53,15 @@ export default function SwipeableTemporaryDrawer({
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {pages.map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {pages.map((page, index) => (
+          <ListItem key={page.id} disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <Button component={Link} href={page.link}>
+                <ListItemText primary={page.name} />
+              </Button>
             </ListItemButton>
           </ListItem>
         ))}
