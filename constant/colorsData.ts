@@ -28,11 +28,14 @@ export const lightColorsData: HEXADECIMAL[] = lightColors.map((data) => {
   };
 });
 
-export const getColors = (): Promise<HEXADECIMAL[]> =>
-  Promise.resolve([...colorsData]);
+export const getColors = async (): Promise<HEXADECIMAL[]> => {
+  return [...colorsData];
+};
 
-export const getDarkColors = (): Promise<HEXADECIMAL[]> =>
-  Promise.resolve([...darkColorsData]);
+export const getDarkColors = async (): Promise<HEXADECIMAL[]> => {
+  return [...darkColorsData];
+};
 
-export const getLightColors = (): Promise<HEXADECIMAL[]> =>
-  Promise.resolve([...lightColorsData]);
+export const getLightColors = async (): Promise<HEXADECIMAL[]> => {
+  return [...lightColorsData];
+};
