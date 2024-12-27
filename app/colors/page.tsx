@@ -1,8 +1,8 @@
-import Color from "@/components/Color";
+import Colors from "@/components/Colors";
 import React from "react";
 
 const page = () => {
-  return <Color />;
+  return <Colors />;
 };
 
 export default page;

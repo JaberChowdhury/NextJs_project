@@ -4,7 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { getColors } from "@/constant/colorsData";
 import Card from "./Card";
 import Grid from "@mui/material/Grid2";
-import { CircularProgress, Container } from "@mui/material";
+import Loading from "./Loading";
+
 
 const Colors = () => {
   const { data: colors, isLoading } = useQuery<HEXADECIMAL[]>({
@@ -12,20 +13,7 @@ const Colors = () => {
     queryFn: getColors,
   });
 
-  if (isLoading)
-    return (
-      <Container
-        sx={{
-          width: "100%",
-          minHeight: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <CircularProgress size="15rem" />
-      </Container>
-    );
+  if (isLoading) return <Loading />;
   return (
     <Grid
       container

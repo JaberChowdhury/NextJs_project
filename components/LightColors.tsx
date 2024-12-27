@@ -1,11 +1,10 @@
 "use client";
-import React from "react";
 import Card from "./Card";
 import { useQuery } from "@tanstack/react-query";
 import { getLightColors } from "@/constant/colorsData";
 import { HEXADECIMAL } from "@/lib/utils/TYPES";
-import { Container, CircularProgress } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import Loading from "./Loading";
 
 const LightColors = () => {
   const { data: colors, isLoading } = useQuery<HEXADECIMAL[]>({
@@ -13,20 +12,7 @@ const LightColors = () => {
     queryFn: getLightColors,
   });
 
-  if (isLoading)
-    return (
-      <Container
-        sx={{
-          width: "100%",
-          minHeight: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <CircularProgress size="15rem" />
-      </Container>
-    );
+  if (isLoading) return <Loading />;
 
   return (
     <Grid

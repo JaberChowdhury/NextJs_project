@@ -4,11 +4,10 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
-import { Stack, Typography } from "@mui/material";
+import DetailedCard from "./DetailedCard";
 
 type propsType = {
   main: string;
@@ -40,9 +39,7 @@ export default function DialogOptions({ main, opposite, children }: propsType) {
     <React.Fragment>
       <Button
         sx={{
-          padding: 0,
-          width: "0",
-          margin: 0,
+          minWidth: 150,
         }}
         onClick={handleClickOpen}
       >
@@ -57,30 +54,7 @@ export default function DialogOptions({ main, opposite, children }: propsType) {
       >
         <DialogTitle>Move the color to you favourite tools</DialogTitle>
         <DialogContent>
-          <Stack direction="column" spacing={2}>
-            <Stack
-              direction="row"
-              sx={{
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-              spacing={2}
-            >
-              <Typography>Add to favourite</Typography>
-              <Button variant="contained">Add</Button>
-            </Stack>
-            <Stack
-              direction="row"
-              sx={{
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-              spacing={2}
-            >
-              <Typography>Send to lab</Typography>
-              <Button variant="contained">Send</Button>
-            </Stack>
-          </Stack>
+          <DetailedCard main={main} opposite={opposite} />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>

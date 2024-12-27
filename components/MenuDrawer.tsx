@@ -11,7 +11,6 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Button, IconButton, Link } from "@mui/material";
-import page from "@/app/page";
 
 type Anchor = "left";
 
