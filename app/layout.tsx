@@ -6,6 +6,7 @@ import theme from "@/theme";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import Navbar from "@/components/Navbar";
 import QueryProvider from "@/components/provider/QueryClientProvider";
+import { Container } from "@mui/material";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -21,8 +22,8 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <ThemeProvider theme={theme}>
               <CssBaseline />
               <Navbar />
-              {props.children}
-            </ThemeProvider>{" "}
+              <Container>{props.children}</Container>
+            </ThemeProvider>
           </QueryProvider>
         </AppRouterCacheProvider>
       </body>
