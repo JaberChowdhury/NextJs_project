@@ -1,14 +1,7 @@
-import { Button } from "../components/ui/button";
+import React from "react";
 
-const App = () => {
-  return (
-    <div>
-      <div>hello world</div>
-      <div>
-        <Button>help me</Button>
-      </div>
-    </div>
-  );
+const page = () => {
+  return <div>page</div>;
 };
 
-export default App;
+export default page;
