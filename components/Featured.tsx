@@ -1,6 +1,4 @@
-import React from "react";
 import Flexbox from "./Flexbox";
-import { Flow_Block, Ultra } from "next/font/google";
 import Image from "next/image";
 import img1 from "../assets/photos/pngwing 6.png";
 import img2 from "../assets/photos/pngwing 5.png";

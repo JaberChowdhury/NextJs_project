@@ -1,5 +1,3 @@
-import React from "react";
-import Flexbox from "./Flexbox";
 import Image from "next/image";
 import img1 from "../assets/photos/Group 57.png";
 import img2 from "../assets/photos/Group 58.png";

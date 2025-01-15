@@ -8,7 +8,7 @@ const Hero = () => {
     <Flexbox className="bg-[#E55473]/[0.1]">
       <div className="flex flex-col justify-between gap-y-7">
         <h1 className="text-[80px] font-bold w-[708px]">
-          Let's make beautiful flowers a part of your life.
+          Let&apos;s make beautiful flowers a part of your life.
         </h1>
         <p className="text-lg w-[634px]">
           It is a long established fact that a reader will be distracted by the
