@@ -6,6 +6,7 @@ import theme from "@/theme";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import Navbar from "@/components/Navbar";
 import { Container } from "@mui/material";
+
 // import ModeSwitch from "@/components/ModeSwitch";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
@@ -19,6 +20,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             <CssBaseline />
             {/* <ModeSwitch /> */}
             <Navbar />
+            {/* <Cursor /> */}
             <Container>{props.children}</Container>
           </ThemeProvider>
         </AppRouterCacheProvider>

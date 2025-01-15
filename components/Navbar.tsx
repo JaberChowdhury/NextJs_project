@@ -5,10 +5,20 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import AdbIcon from "@mui/icons-material/Adb";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 function ResponsiveAppBar() {
   return (
-    <AppBar position="static">
+    <AppBar
+      component={motion.div}
+      initial={{
+        scale: 0.1,
+      }}
+      animate={{
+        scale: 1,
+      }}
+      position="static"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />

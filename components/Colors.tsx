@@ -3,6 +3,7 @@ import colorutils from "@/utils/main";
 import Color from "./Color";
 import { HEXADECIMAL } from "@/utils/TYPES";
 import { Stack } from "@mui/material";
+// import { motion } from "motion"
 const Colors = () => {
   const allcolors: HEXADECIMAL[] = new colorutils().generateColors(200);
   
@@ -17,7 +18,7 @@ const Colors = () => {
       }}
     >
       {allcolors.map((data, id) => {
-        return <Color data={data} />;
+        return <Color key={id}  data={data} />;
       })}
     </Stack>
   );
