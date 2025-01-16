@@ -5,7 +5,7 @@ import flower from "../assets/photos/pngwing 10.png";
 
 const Hero = () => {
   return (
-    <Flexbox className="bg-[#E55473]/[0.1]">
+    <Flexbox className="bg-[#E55473]/[0.1] flex-wrap p-10">
       <div className="flex flex-col justify-between gap-y-7">
         <h1 className="text-[80px] font-bold w-[708px]">
           Let&apos;s make beautiful flowers a part of your life.
@@ -20,7 +20,7 @@ const Hero = () => {
           Shop Now
         </button>
       </div>
-      <Image width={635} height={800} src={flower} alt="awesome flower" />
+      <Image width={635} height={800} src={flower} className="hidden lg:block" alt="awesome flower" />
     </Flexbox>
   );
 };

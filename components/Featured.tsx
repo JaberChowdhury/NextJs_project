@@ -39,11 +39,11 @@ const Featured = () => {
           readable content of a page when looking at its layout.
         </p>
       </Flexbox>
-      <div className="flex items-end justify-between w-full">
+      <Flexbox className=" w-full justify-between flex-wrap relative">
         <Flowerbox className="bg-[#A72162]/[0.15]" url={img1} />
         <Flowerbox className="bg-[#0597A0]/[0.15]" url={img2} />
         <Flowerbox className="bg-[#477D11]/[0.15]" url={img3} />
-      </div>
+      </Flexbox>
     </Flexbox>
   );
 };

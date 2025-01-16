@@ -36,8 +36,8 @@ export default function RootLayout({
         className={`${lato.variable}`}
       >
         <Hero />
-        <div className=" px-72 m-auto">{children}</div>
-        <Footer />{" "}
+        <div className="m-auto">{children}</div>
+        <Footer />
       </body>
     </html>
   );
