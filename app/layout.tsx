@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         // className={`${lato.variable} ${geistSans.variable} ${geistMono.variable} antialiased px-20`}
-        className={`${lato.variable}`}
+        className={`${lato.className}`}
       >
         <Hero />
         <div className="m-auto">{children}</div>
