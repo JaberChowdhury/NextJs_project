@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
+import Hero from "@/components/Hero";
+import Footer from "@/components/Footer";
 
 const lato = Lato({
   variable: "--font-lato-sans",
@@ -31,9 +33,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         // className={`${lato.variable} ${geistSans.variable} ${geistMono.variable} antialiased px-20`}
-        className={`${lato.variable} px-20`}
+        className={`${lato.variable}`}
       >
-        {children}
+        <Hero />
+        <div className=" px-72 m-auto">{children}</div>
+        <Footer />{" "}
       </body>
     </html>
   );

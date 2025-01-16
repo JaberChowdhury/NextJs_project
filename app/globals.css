@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 * {
   border: 0.1px dashed black;
-}
+} */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
