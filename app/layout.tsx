@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/theme";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
 import ModeSwitch from "@/components/ModeSwitch";
+import { Container } from "@mui/material";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -15,8 +16,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
-            <ModeSwitch />
-            {props.children}
+            <Container maxWidth="lg">
+              <ModeSwitch />
+              {props.children}
+            </Container>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
