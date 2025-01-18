@@ -12,7 +12,7 @@ export default function page() {
     },
     {
       path: "/defaulttable-v2",
-      name: "Default table v2
+      name: "Default table v2",
     },
   ];
   return (

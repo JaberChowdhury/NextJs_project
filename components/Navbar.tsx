@@ -1,6 +1,5 @@
-import React from "react";
 import ModeSwitch from "./ModeSwitch";
-import { AppBar, Toolbar, IconButton, Typography, Card } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 
 const Navbar = () => {
