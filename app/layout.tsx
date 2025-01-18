@@ -4,8 +4,8 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "@/theme";
 import InitColorSchemeScript from "@mui/material/InitColorSchemeScript";
-import ModeSwitch from "@/components/ModeSwitch";
 import { Container } from "@mui/material";
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -17,7 +17,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <Container maxWidth="lg">
-              <ModeSwitch />
+              <Navbar />
               {props.children}
             </Container>
           </ThemeProvider>
