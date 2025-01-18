@@ -17,7 +17,7 @@ for (let i = 0; i < limit; i++) {
     price: faker.commerce.price({ min: 100, max: 500 }),
     id: crypto.randomUUID(),
     owner: faker.person.firstName(),
-    checked: false,
+    checked: Math.random() < 0.5,
   };
   product.push(data);
 }

@@ -31,6 +31,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderBottom: "none", // Remove bottom border from all TableCells
+        },
+      },
+    },
   },
 });
 
