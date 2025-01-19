@@ -20,10 +20,11 @@ export default function BasicTable() {
             <TableCell align="right">ID</TableCell>
             <TableCell align="right">Owner</TableCell>
             <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Price</TableCell>
             <TableCell align="right">Adjective</TableCell>
             <TableCell align="right">Description</TableCell>
             <TableCell align="right">Material</TableCell>
+            <TableCell align="right">Price</TableCell>
+            <TableCell align="right">Offerprice</TableCell>
             <TableCell align="right">Checked</TableCell>
           </TableRow>
         </TableHead>
@@ -42,10 +43,11 @@ export default function BasicTable() {
               <TableCell align="right">{row.id}</TableCell>
               <TableCell align="right">{row.owner}</TableCell>
               <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.price}</TableCell>
               <TableCell align="right">{row.adjective}</TableCell>
               <TableCell align="right">{row.description}</TableCell>
               <TableCell align="right">{row.material}</TableCell>
+              <TableCell align="right">{row.price}</TableCell>
+              <TableCell align="right">{row.offerprice}</TableCell>
               <TableCell align="right">
                 {(row.checked && <DoneAllIcon sx={{ color: "green" }} />) || (
                   <RemoveDoneIcon sx={{ color: "red" }} />

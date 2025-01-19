@@ -1,8 +1,7 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
-import { Typography } from "@mui/material";
-import Link from "next/link";
+import Hoverbutton from "@/components/Hoverbutton";
+import Avatartransition from "@/components/Avatartransition";
 
 export default function page() {
   const pagedata = [
@@ -47,12 +46,11 @@ export default function page() {
               lg: 3,
             }}
           >
-            <Typography variant="h5" href={data.path} component={Link}>
-              {data.name}
-            </Typography>
+            <Hoverbutton data={data} />
           </Grid>
         ))}
       </Grid>
+      <Avatartransition />
     </Box>
   );
 }
