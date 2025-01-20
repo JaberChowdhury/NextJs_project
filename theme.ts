@@ -9,7 +9,8 @@ const work_sans = Work_Sans({
 });
 
 const theme = createTheme({
-  colorSchemes: { light: true, dark: true },
+  defaultColorScheme: "light",
+  colorSchemes: { light: true, dark: false },
   cssVariables: {
     colorSchemeSelector: "class",
   },
