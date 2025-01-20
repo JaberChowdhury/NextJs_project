@@ -1,20 +1,21 @@
 "use client";
 import { createTheme } from "@mui/material/styles";
-import { Roboto } from "next/font/google";
+import { Quicksand } from "next/font/google";
 
-const roboto = Roboto({
+const Quicksand_font = Quicksand({
   weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
 });
 
 const theme = createTheme({
-  colorSchemes: { light: true, dark: true },
+  defaultColorScheme: "light",
+  colorSchemes: { light: true, dark: false },
   cssVariables: {
     colorSchemeSelector: "class",
   },
   typography: {
-    fontFamily: roboto.style.fontFamily,
+    fontFamily: Quicksand_font.style.fontFamily,
   },
   components: {
     MuiAlert: {
