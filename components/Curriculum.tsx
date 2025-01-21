@@ -69,7 +69,7 @@ const Curriculum = () => {
         Standard Curriculum
       </Typography>
       <Stack
-        direction={{ md: "column", xl: "row" }}
+        direction={{ xs: "column", md: "row" }}
         sx={{ justifyContent: "center", alignItems: "center", gap: 4 }}
       >
         {Curriculum_data.map((data, id) => (
@@ -102,7 +102,7 @@ const Curriculum = () => {
         ))}
       </Stack>
       <Box
-        sx={{ display: { xs: "none", sm: "none", md: "none", xl: "block" } }}
+        sx={{ display: { xs: "none", sm: "none",  md: "block" } }}
       >
         <Stack direction="row" sx={{ gap: 3, my: 5 }}>
           <Typography

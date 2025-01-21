@@ -14,7 +14,7 @@ const Footer = () => {
       direction={{ xs: "column", md: "row" }}
       sx={{
         backgroundColor: "#01ACFD",
-        p: { xs: 5, md: 10, xl: 10 },
+        p: { xs: 5, md: 10 },
         gap: { xs: 5, md: 0 },
         justifyContent: "space-between",
         alignItems: "center",
@@ -50,7 +50,7 @@ const Footer = () => {
           Hawaiian meatball.
         </Typography>
       </Stack>
-      <Stack sx={{ width: { xs: "100%", xl: "auto" } }}>
+      <Stack sx={{ width: { xs: "100%", md: "auto" } }}>
         <Typography
           sx={{
             fontWeight: "bold",
@@ -91,7 +91,7 @@ const Footer = () => {
 
       <Stack
         sx={{
-          width: { xs: "100%", xl: "auto" },
+          width: { xs: "100%", md: "auto" },
         }}
       >
         <Typography variant="h6" sx={{ color: "white" }}>

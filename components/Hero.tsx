@@ -4,7 +4,7 @@ import HeroImage from "./HeroImage";
 const Hero = () => {
   return (
     <Stack
-      direction={{ md: "column", xl: "row" }}
+      direction={{ xs: "column", md: "row" }}
       sx={{
         justifyContent: "space-between",
         alignItems: "center",

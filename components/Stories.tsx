@@ -153,13 +153,13 @@ const Stories = () => {
         direction="row"
         sx={{
           justifyContent: "center",
-          maxHeight: { xs: "auto", xl: "630px" },
+          maxHeight: { xs: "auto", md: "630px" },
           alignItems: "flex-start",
           gap: 6,
         }}
       >
         <Stack
-          sx={{ display: { xs: "none", sm: "none", md: "flex", xl: "flex" } }}
+          sx={{ display: { xs: "none", sm: "none", md: "flex", } }}
         >
           <Card sx={{ minHeight: "630px" }}>
             <CardMedia
@@ -187,27 +187,27 @@ const Stories = () => {
         </Stack>
         <Box
           sx={{
-            display: { xs: "flex", xl: "grid" },
-            flexDirection: { xs: "column", xl: "row" },
+            display: { xs: "flex", md: "grid" },
+            flexDirection: { xs: "column", md: "row" },
             gridTemplateColumns: {
               xs: "none",
-              xl: "repeat(2,290px)",
+              md: "repeat(2,290px)",
             },
             gap: 5,
-            height: { xs: "auto", xl: "630px" },
+            height: { xs: "auto", md: "630px" },
           }}
         >
           {stories_data.slice(1).map((story) => (
             <Card
               key={story.id}
               sx={{
-                width: { xs: "290px", xl: "290px" },
-                height: { xs: "290px", xl: "300px" },
+                width: { xs: "290px", md: "290px" },
+                height: { xs: "290px", md: "300px" },
               }}
             >
               <CardMedia
                 sx={{
-                  height: { xs: "10rem", xl: "12rem" },
+                  height: { xs: "10rem", md: "12rem" },
                   backgroundPosition: "fixed",
                 }}
                 image={`${story.img.src}`}
