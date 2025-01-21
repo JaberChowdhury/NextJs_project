@@ -4,6 +4,8 @@ import img1 from "@/public/assets/kinder.png";
 import img2 from "@/public/assets/elementary.png";
 import img3 from "@/public/assets/middle.png";
 import Image from "next/image";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const Curriculum = () => {
   const Curriculum_data = [
@@ -115,7 +117,7 @@ const Curriculum = () => {
               fontWeight: "bold",
             }}
           >
-            {"<"}
+            <KeyboardArrowLeftIcon />
           </Typography>
           <Typography
             variant="h3"
@@ -131,7 +133,7 @@ const Curriculum = () => {
               fontWeight: "bold",
             }}
           >
-            {">"}
+            <KeyboardArrowRightIcon />
           </Typography>
         </Stack>
       </Box>

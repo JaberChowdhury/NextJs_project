@@ -1,7 +1,9 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography,Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import herokid from "@/public/assets/hero-kids.png";
+
+
 const Hero = () => {
   return (
     <Stack
@@ -34,7 +36,9 @@ const Hero = () => {
           Enroll Now
         </Button>
       </Stack>
-      <Image width={468} height={575} src={herokid} alt="hero" />
+      <Box sx{{ width:{ md: "100%", xl: "50%" }}}>
+        <Image width={468} height={575} src={herokid} alt="hero" />
+      </Box>
     </Stack>
   );
 };

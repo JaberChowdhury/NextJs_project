@@ -1,7 +1,8 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
-import Image from "next/image";
-import React from "react";
 import logo from "@/public/assets/logo.png";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
           School
         </Typography>
       </Stack>
-      <Box>
+      <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
         <Stack
           direction="row"
           sx={{
@@ -73,10 +74,14 @@ const Navbar = () => {
           px: 3,
           fontWeight: "bold",
           borderRadius: "8px",
+          display: { xs: "none", sm: "none", md: "block" },
         }}
       >
         Contact
       </Button>
+      <IconButton aria-label="delete">
+        <MenuIcon sx={{ fontSize: 30, mx: 3 }} />
+      </IconButton>
     </Stack>
   );
 };
