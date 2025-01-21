@@ -5,7 +5,7 @@ import herokid from "@/public/assets/hero-kids.png";
 const Hero = () => {
   return (
     <Stack
-      direction="row"
+      direction={{ md: "column", xl: "row" }}
       sx={{
         justifyContent: "space-between",
         alignItems: "center",

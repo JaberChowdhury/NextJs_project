@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import logo from "@/public/assets/logo.png";
@@ -19,50 +19,52 @@ const Navbar = () => {
           School
         </Typography>
       </Stack>
-      <Stack
-        direction="row"
-        sx={{
-          gap: 3,
-          justifyContent: "center",
-          alignItems: "center",
-          "& .MuiTypography-root": {
-            textDecoration: "none",
-          },
-        }}
-      >
-        <Typography
-          component={Link}
-          href="#"
-          variant="h6"
-          sx={{ fontWeight: "bold", color: "orange" }}
+      <Box>
+        <Stack
+          direction="row"
+          sx={{
+            gap: 3,
+            justifyContent: "center",
+            alignItems: "center",
+            "& .MuiTypography-root": {
+              textDecoration: "none",
+            },
+          }}
         >
-          Home
-        </Typography>
-        <Typography
-          variant="h6"
-          component={Link}
-          href="#"
-          sx={{ fontWeight: "bold", color: "#01acfd" }}
-        >
-          About
-        </Typography>
-        <Typography
-          variant="h6"
-          component={Link}
-          href="#"
-          sx={{ fontWeight: "bold", color: "#05D4DF" }}
-        >
-          Facilites
-        </Typography>
-        <Typography
-          variant="h6"
-          component={Link}
-          href="#"
-          sx={{ fontWeight: "bold", color: "#5D58EF" }}
-        >
-          Admission
-        </Typography>
-      </Stack>
+          <Typography
+            component={Link}
+            href="#"
+            variant="h6"
+            sx={{ fontWeight: "bold", color: "orange" }}
+          >
+            Home
+          </Typography>
+          <Typography
+            variant="h6"
+            component={Link}
+            href="#"
+            sx={{ fontWeight: "bold", color: "#01acfd" }}
+          >
+            About
+          </Typography>
+          <Typography
+            variant="h6"
+            component={Link}
+            href="#"
+            sx={{ fontWeight: "bold", color: "#05D4DF" }}
+          >
+            Facilites
+          </Typography>
+          <Typography
+            variant="h6"
+            component={Link}
+            href="#"
+            sx={{ fontWeight: "bold", color: "#5D58EF" }}
+          >
+            Admission
+          </Typography>
+        </Stack>
+      </Box>
       <Button
         disableElevation
         variant="contained"

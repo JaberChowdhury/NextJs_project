@@ -1,4 +1,4 @@
-import { Card, CardContent, Stack, Typography } from "@mui/material";
+import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
 import React from "react";
 import img1 from "@/public/assets/kinder.png";
 import img2 from "@/public/assets/elementary.png";
@@ -65,7 +65,7 @@ const Curriculum = () => {
         Standard Curriculum
       </Typography>
       <Stack
-        direction="row"
+        direction={{ md: "column", xl: "row" }}
         sx={{ justifyContent: "center", alignItems: "center", gap: 4 }}
       >
         {Curriculum_data.map((data, id) => (
@@ -97,40 +97,44 @@ const Curriculum = () => {
           </Card>
         ))}
       </Stack>
-      <Stack direction="row" sx={{ gap: 3, my: 5 }}>
-        <Typography
-          variant="h3"
-          sx={{
-            width: "60px",
-            height: "60px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "50%",
-            backgroundColor: "orange",
-            color: "white",
-            fontWeight: "bold",
-          }}
-        >
-          {"<"}
-        </Typography>
-        <Typography
-          variant="h3"
-          sx={{
-            width: "60px",
-            height: "60px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "50%",
-            backgroundColor: "orange",
-            color: "white",
-            fontWeight: "bold",
-          }}
-        >
-          {">"}
-        </Typography>
-      </Stack>
+      <Box
+        sx={{ display: { xs: "none", sm: "none", md: "none", xl: "block" } }}
+      >
+        <Stack direction="row" sx={{ gap: 3, my: 5 }}>
+          <Typography
+            variant="h3"
+            sx={{
+              width: "60px",
+              height: "60px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+              backgroundColor: "orange",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            {"<"}
+          </Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              width: "60px",
+              height: "60px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+              backgroundColor: "orange",
+              color: "white",
+              fontWeight: "bold",
+            }}
+          >
+            {">"}
+          </Typography>
+        </Stack>
+      </Box>
     </Stack>
   );
 };

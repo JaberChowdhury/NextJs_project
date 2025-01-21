@@ -8,7 +8,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <Stack sx={{ my: 3 }}>
+    <Stack sx={{ my: 3, gap: 7 }}>
       <Navbar />
       <Hero />
       <Curriculum />
