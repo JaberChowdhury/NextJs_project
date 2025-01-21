@@ -79,7 +79,10 @@ const Navbar = () => {
       >
         Contact
       </Button>
-      <IconButton aria-label="delete">
+      <IconButton
+        sx={{ display: { xs: "block", md: "none" } }}
+        aria-label="delete"
+      >
         <MenuIcon sx={{ fontSize: 30, mx: 3 }} />
       </IconButton>
     </Stack>

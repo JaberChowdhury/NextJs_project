@@ -1,21 +1,21 @@
+import img1 from "@/public/assets/fb.png";
+import img4 from "@/public/assets/google+.png";
+import img2 from "@/public/assets/kinder.png";
+import logo from "@/public/assets/logo.png";
+import img3 from "@/public/assets/twitter.png";
 import { Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import React from "react";
-import logo from "@/public/assets/logo.png";
-import img1 from "@/public/assets/fb.png";
-import img2 from "@/public/assets/kinder.png";
-import img3 from "@/public/assets/twitter.png";
-import img4 from "@/public/assets/google+.png";
 import Link from "next/link";
 
 const Footer = () => {
   const images = [img1, img2, img3, img4];
   return (
     <Stack
-      direction="row"
+      direction={{ xs: "column", md: "row" }}
       sx={{
         backgroundColor: "#01ACFD",
-        p: 10,
+        p: { xs: 5, md: 10, xl: 10 },
+        gap: { xs: 5, md: 0 },
         justifyContent: "space-between",
         alignItems: "center",
       }}
@@ -23,7 +23,10 @@ const Footer = () => {
       <Stack>
         <Stack
           direction="row"
-          sx={{ justifyContent: "center", alignItems: "center" }}
+          sx={{
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
         >
           <Image
             style={{ backgroundColor: "white" }}
@@ -40,15 +43,20 @@ const Footer = () => {
             Education
           </Typography>
         </Stack>
-        <Typography sx={{ color: "white", ml: 7 }}>
+        <Typography sx={{ color: "white" }}>
           Pizza ipsum dolor meat lovers buffalo. <br />
           Deep dolor roll melted bacon Bianca pan <br />
           bacon pineapple Aussie. Mayo rib sauce <br />
           Hawaiian meatball.
         </Typography>
       </Stack>
-      <Stack>
-        <Typography sx={{ fontWeight: "bold", color: "white" }}>
+      <Stack sx={{ width: { xs: "100%", xl: "auto" } }}>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+            color: "white",
+          }}
+        >
           About School
         </Typography>
         <Typography
@@ -80,7 +88,12 @@ const Footer = () => {
           Admission
         </Typography>
       </Stack>
-      <Stack sx={{ justifyContent: "center", alignItems: "center" }}>
+
+      <Stack
+        sx={{
+          width: { xs: "100%", xl: "auto" },
+        }}
+      >
         <Typography variant="h6" sx={{ color: "white" }}>
           Keep In Touch
         </Typography>
@@ -95,7 +108,9 @@ const Footer = () => {
           }}
         >
           {images.map((img, index) => (
-            <Image width={20} height={20} key={index} src={img} alt="social" />
+            <Typography href="#" component={Link} key={index}>
+              <Image width={20} height={20} src={img} alt="social" />
+            </Typography>
           ))}
         </Stack>
       </Stack>

@@ -1,20 +1,16 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid2,
-  Stack,
-  Typography,
-} from "@mui/material";
-import Image from "next/image";
-import React from "react";
 import img1 from "@/public/assets/story-1.png";
 import img2 from "@/public/assets/story-2.png";
 import img3 from "@/public/assets/story-3.png";
 import img4 from "@/public/assets/story-4.png";
 import img5 from "@/public/assets/story-5.png";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  CardMedia, Stack,
+  Typography
+} from "@mui/material";
 
 const Stories = () => {
   const stories_data = [
@@ -157,12 +153,14 @@ const Stories = () => {
         direction="row"
         sx={{
           justifyContent: "center",
-          maxHeight: "630px",
+          maxHeight: { xs: "auto", xl: "630px" },
           alignItems: "flex-start",
           gap: 6,
         }}
       >
-        <Stack>
+        <Stack
+          sx={{ display: { xs: "none", sm: "none", md: "flex", xl: "flex" } }}
+        >
           <Card sx={{ minHeight: "630px" }}>
             <CardMedia
               sx={{ height: "26rem" }}
@@ -189,16 +187,29 @@ const Stories = () => {
         </Stack>
         <Box
           sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2,290px)",
+            display: { xs: "flex", xl: "grid" },
+            flexDirection: { xs: "column", xl: "row" },
+            gridTemplateColumns: {
+              xs: "none",
+              xl: "repeat(2,290px)",
+            },
             gap: 5,
-            height: "630px",
+            height: { xs: "auto", xl: "630px" },
           }}
         >
           {stories_data.slice(1).map((story) => (
-            <Card key={story.id} sx={{ width: "290px" }}>
+            <Card
+              key={story.id}
+              sx={{
+                width: { xs: "290px", xl: "290px" },
+                height: { xs: "290px", xl: "300px" },
+              }}
+            >
               <CardMedia
-                sx={{ height: "12rem", backgroundPosition: "fixed" }}
+                sx={{
+                  height: { xs: "10rem", xl: "12rem" },
+                  backgroundPosition: "fixed",
+                }}
                 image={`${story.img.src}`}
                 title="green iguana"
               />

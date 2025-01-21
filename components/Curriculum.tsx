@@ -1,11 +1,10 @@
-import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
-import React from "react";
-import img1 from "@/public/assets/kinder.png";
 import img2 from "@/public/assets/elementary.png";
+import img1 from "@/public/assets/kinder.png";
 import img3 from "@/public/assets/middle.png";
-import Image from "next/image";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
+import Image from "next/image";
 
 const Curriculum = () => {
   const Curriculum_data = [
@@ -63,7 +62,10 @@ const Curriculum = () => {
   ];
   return (
     <Stack sx={{ justifyContent: "center", alignItems: "center", gap: 6 }}>
-      <Typography variant="h3" sx={{ fontWeight: "bold", my: 12 }}>
+      <Typography
+        variant="h3"
+        sx={{ fontWeight: "bold", my: 12, textAlign: "center" }}
+      >
         Standard Curriculum
       </Typography>
       <Stack

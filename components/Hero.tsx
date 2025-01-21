@@ -1,8 +1,5 @@
-import { Button, Stack, Typography,Box } from "@mui/material";
-import Image from "next/image";
-import React from "react";
-import herokid from "@/public/assets/hero-kids.png";
-
+import { Button, Stack, Typography } from "@mui/material";
+import HeroImage from "./HeroImage";
 
 const Hero = () => {
   return (
@@ -36,11 +33,8 @@ const Hero = () => {
           Enroll Now
         </Button>
       </Stack>
-      <Box sx{{ width:{ md: "100%", xl: "50%" }}}>
-        <Image width={468} height={575} src={herokid} alt="hero" />
-      </Box>
+      <HeroImage />
     </Stack>
   );
 };
-
 export default Hero;
