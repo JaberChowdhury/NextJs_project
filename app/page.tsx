@@ -1,14 +1,15 @@
-import { Button } from "../components/ui/button";
+import GamesList from "@/components/games/GamesList";
+import MoviesList from "@/components/movie/MoviesList";
+import React from "react";
 
-const App = () => {
+const page = () => {
   return (
     <div>
-      <div>hello world</div>
-      <div>
-        <Button>help me</Button>
-      </div>
+      <GamesList />
+      <MoviesList />
     </div>
   );
 };
 
-export default App;
+export default page;
+
