@@ -9,8 +9,8 @@ type StoreType = {
   lineNumber: boolean;
   wrapLines: boolean;
   wrapLongLines: boolean;
-  updateTheme: (data: ThemeName) => void;
-  updateLanguage: (data: Language) => void;
+  updateTheme: (data: ThemeName | Language) => void;
+  updateLanguage: (data: Language | ThemeName) => void;
   updateLineNumber: () => void;
   updateWrapLines: () => void;
   updateWrapLongLines: () => void;

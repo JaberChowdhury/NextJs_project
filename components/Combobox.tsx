@@ -46,7 +46,7 @@ function StatusList({
         <CommandGroup>
           {statuses.map((status) => (
             <CommandItem
-              key={status.value}
+              key={crypto.randomUUID()}
               value={status.value}
               onSelect={(value) => {
                 getValue(value as Language | ThemeName);
