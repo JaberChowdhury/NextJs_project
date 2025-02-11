@@ -16,7 +16,7 @@ const Code = ({ codeString, language, style }: PropsType) => {
   const selectedStyle =
     hljsThemes[style as keyof typeof hljsThemes] ||
     prismThemes[style as keyof typeof prismThemes];
-  const { lineNumber,wrapLines } = useStore();
+  const { lineNumber, wrapLines } = useStore();
   return (
     <SyntaxHighlighter
       customStyle={{
