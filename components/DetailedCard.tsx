@@ -54,7 +54,11 @@ const DetailedCard = ({ main, opposite }: propsType) => {
   const lightness = colorUtils.generateHSL().main.l;
   return (
     <MuiCard
-      sx={{ minWidth: 150, justifyContent: "center", alignItems: "center" }}
+      sx={{
+        minWidth: { md: 250, xl: 350 },
+        justifyContent: "center",
+        alignItems: "center",
+      }}
       variant="outlined"
     >
       <Stack

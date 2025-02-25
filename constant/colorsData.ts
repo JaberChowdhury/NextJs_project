@@ -1,5 +1,6 @@
 import utils from "@/lib/utils/main";
 import { HEXADECIMAL } from "@/lib/utils/TYPES";
+import uuid from "@/lib/uuid";
 
 const colorUtils = new utils();
 const limit = 500;
@@ -11,20 +12,20 @@ const lightColors = colorUtils.generateLightColorVariant(limit);
 export const colorsData: HEXADECIMAL[] = colors.map((data) => {
   return {
     ...data,
-    id: crypto.randomUUID(),
+    id: uuid(),
   };
 });
 export const darkColorsData: HEXADECIMAL[] = darkColors.map((data) => {
   return {
     ...data,
-    id: crypto.randomUUID(),
+    id: uuid(),
   };
 });
 
 export const lightColorsData: HEXADECIMAL[] = lightColors.map((data) => {
   return {
     ...data,
-    id: crypto.randomUUID(),
+    id: uuid(),
   };
 });
 
