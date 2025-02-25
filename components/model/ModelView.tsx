@@ -9,7 +9,7 @@ import {
 import { TransitionProps } from "@mui/material/transitions";
 import React from "react";
 type propsType = {
-  children: React.ReactNode;
+  // children: React.ReactNode;
   content: React.ReactNode;
   isOpen: () => void;
   isClose: () => void;
@@ -26,23 +26,21 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 const ModelView = ({
-  children,
   content,
-  isOpen,
   isClose,
   open,
   title = "",
 }: propsType) => {
   return (
     <React.Fragment>
-      <Button
+      {/* <Button
         sx={{
           minWidth: { md: 250, xl: 350 },
         }}
         onClick={isOpen}
       >
         {children}
-      </Button>
+      </Button> */}
       <Dialog
         open={open}
         TransitionComponent={Transition}

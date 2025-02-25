@@ -1,6 +1,5 @@
 import MuiCard from "@mui/material/Card";
-import { Paper } from "@mui/material";
-import DialogOptions from "./DialogOptions";
+import { Button, Paper } from "@mui/material";
 import useModel from "@/store/useModel";
 import DetailedCard from "./DetailedCard";
 type propsType = {
@@ -18,6 +17,7 @@ const Card = ({ main, opposite }: propsType) => {
   return (
     <MuiCard sx={{ minWidth: 150 }} variant="outlined">
       <Paper
+        component={Button}
         onClick={handleClick}
         sx={{
           width: 200,
