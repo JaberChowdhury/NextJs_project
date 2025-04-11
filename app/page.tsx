@@ -1,17 +1,15 @@
-import Fact from "@/components/Fact";
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
-import Imagesection from "@/components/Imagesection";
-import { Stack } from "@mui/material";
+import Editor from "@/components/Editor";
+import { Button } from "@/components/ui/button";
+import React from "react";
 
 const page = () => {
   return (
-    <Stack>
-      <Imagesection />
-      <Features />
-      <Fact />
-      <Footer />
-    </Stack>
+    <div>
+      <Button>Button</Button>
+      <div>
+        <Editor />
+      </div>
+    </div>
   );
 };
 
