@@ -8,6 +8,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github.css";
 import useEditor from "@/store/useEditor";
+import { Table, TableCell, TableHead } from "./ui/table";
 
 const Preview = () => {
   const { markdown } = useEditor();
@@ -62,6 +63,7 @@ const Preview = () => {
               }}
               {...props}
             />
+            // <Table {...props} />
           ),
           th: ({ node, ...props }) => (
             <th
@@ -73,6 +75,7 @@ const Preview = () => {
               }}
               {...props}
             />
+            // <TableHead {...props} />
           ),
           td: ({ node, ...props }) => (
             <td
@@ -82,7 +85,14 @@ const Preview = () => {
               }}
               {...props}
             />
+            // <TableCell {...props} />
           ),
+          h1: ({ node, ...props }) => <h1 className="text-6xl" {...props} />,
+          h2: ({ node, ...props }) => <h2 className="text-5xl" {...props} />,
+          h3: ({ node, ...props }) => <h3 className="text-4xl" {...props} />,
+          h4: ({ node, ...props }) => <h4 className="text-3xl" {...props} />,
+          h5: ({ node, ...props }) => <h5 className="text-2xl" {...props} />,
+          h6: ({ node, ...props }) => <h6 className="text-xl" {...props} />,
         }}
       />
     </div>

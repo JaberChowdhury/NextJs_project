@@ -68,7 +68,7 @@ const Editor = () => {
   };
 
   return (
-    <div className=" p-6 font-mono">
+    <div className="h-screen p-6 font-mono">
       {/* <h2 className="text-2xl font-bold mb-4">React Text Editor</h2> */}
 
       {/* Controls - can use either plain Tailwind or shadcn components */}
@@ -93,7 +93,7 @@ const Editor = () => {
       </div>
 
       {/* Editor */}
-      <div className="flex border border-gray-300 rounded-md overflow-hidden h-96">
+      <div className="flex border border-gray-300 rounded-md overflow-hidden h-full sticky">
         {/* Line numbers */}
         <div
           ref={lineNumbersRef}

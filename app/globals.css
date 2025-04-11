@@ -120,4 +120,16 @@
   body {
     @apply bg-background text-foreground;
   }
+  .bg_pattern_light {
+    background-color: #ffffff;
+    opacity: 1;
+    background-image: radial-gradient(#000000 0.2px, #ffffff 0.2px);
+    background-size: 4px 4px;
+  }
+  .bg_pattern_dark {
+    background-color: #000000;
+    opacity: 1;
+    background-image: radial-gradient(#ffffff 0.2px, #000000 0.2px);
+    background-size: 4px 4px;
+  }
 }
