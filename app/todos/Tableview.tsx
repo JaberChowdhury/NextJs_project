@@ -29,9 +29,9 @@ import {
   Circle,
 } from "lucide-react";
 import useTodo, { TODO, TodoStatus, Priority } from "@/store/useTodo";
+import { Dialog, DialogTrigger, DialogContent } from "@radix-ui/react-dialog";
 
 export default function Tableview() {
-  // Sample data - replace with your actual data
   const { todos } = useTodo();
 
   return (
@@ -44,7 +44,7 @@ export default function Tableview() {
           <TableHead>Tags</TableHead>
           <TableHead>Assignee</TableHead>
           <TableHead>Created</TableHead>
-          <TableHead className="text-right">Actions</TableHead>
+          {/* <TableHead className="text-right">Actions</TableHead> */}
         </TableRow>
       </TableHeader>
       <TableBody className="max-h-screen overflow-scroll">
@@ -101,7 +101,7 @@ export default function Tableview() {
                 {todo.createdAt &&
                   format(new Date(todo.createdAt), "MMM dd, yyyy")}
               </TableCell>
-              <TableCell className="text-right">
+              {/* <TableCell className="text-right">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className="h-8 w-8 p-0">
@@ -123,7 +123,7 @@ export default function Tableview() {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              </TableCell>
+              </TableCell> */}
             </TableRow>
           ))}
       </TableBody>

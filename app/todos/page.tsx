@@ -25,11 +25,11 @@ import { Plus } from "lucide-react";
 
 export default function TabsDemo() {
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="w-full min-h-screen">
       <h1 className="text-3xl font-bold mb-6">Todo Management</h1>
 
-      <div className="flex justify-between items-center mb-6">
-        {/* <div className="flex space-x-2">
+      <div className="flex justify-between items-center mb-6 bg-orange-100">
+        <div className="flex space-x-2">
           <Input placeholder="Search todos..." className="w-[300px]" />
           <Select>
             <SelectTrigger className="w-[180px]">
@@ -54,7 +54,7 @@ export default function TabsDemo() {
               <SelectItem value={Priority.URGENT}>Urgent</SelectItem>
             </SelectContent>
           </Select>
-        </div> */}
+        </div>
         <Button>
           <Plus className="mr-2 h-4 w-4" />
           Add Todo
