@@ -41,7 +41,7 @@ type USETODO_STATE = {
 };
 
 const useTodo = create<USETODO_STATE>((set) => ({
-  todos: generateDummyTodos(9),
+  todos: generateDummyTodos(40),
 
   addTodo: (data) =>
     set((state) => ({

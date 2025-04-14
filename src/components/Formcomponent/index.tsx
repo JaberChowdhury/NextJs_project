@@ -1,13 +1,16 @@
 import useModal from "@/store/useModal";
 import { Button, Stack } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
+import React from "react";
+import Formcomponent from "./Form";
 
-const Formcomponent = () => {
+const index = () => {
   const { openModal, setComponent } = useModal();
   const handleClick = () => {
     openModal();
-    setComponent(<div>form</div>);
+    setComponent(<Formcomponent />);
   };
+
   return (
     <Stack className="items-end justify-end flex-row w-full">
       <Button
@@ -21,4 +24,4 @@ const Formcomponent = () => {
   );
 };
 
-export default Formcomponent;
+export default index;

@@ -11,7 +11,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "@mantine/core": "^7.17.4",
+    "@mantine/form": "^7.17.4",
     "@mantine/hooks": "^7.17.4",
     "@ngneat/falso": "^7.3.0",
     "@tabler/icons-react": "^3.31.0",
@@ -20,7 +22,9 @@
     "next": "^15.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.55.0",
     "tailwind-preset-mantine": "^2.0.5",
+    "zod": "^3.24.2",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
