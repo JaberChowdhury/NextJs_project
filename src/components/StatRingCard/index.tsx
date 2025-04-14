@@ -27,7 +27,7 @@ export function StatsRingCard() {
   ));
 
   return (
-    <Card withBorder p="xl" radius="md" className={`${classes.card} w-[400px]`}>
+    <Card withBorder p="xl" radius="md" className={`${classes.card}`}>
       <div className={classes.inner}>
         <div>
           <Text fz="xl" className={classes.label}>
