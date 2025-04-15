@@ -6,6 +6,8 @@ import { Table, Stack, Badge, Button, Text, Divider } from "@mantine/core";
 import TodoModal from "../Todomodal";
 import { formatDistanceToNow } from "date-fns";
 
+import { IconNumber, IconTag, IconFileDescription } from "@tabler/icons-react";
+
 export function TableComponent() {
   const { todos } = useTodo();
 
@@ -29,9 +31,16 @@ export function TableComponent() {
       <Table verticalSpacing="xs">
         <Table.Thead>
           <Table.Tr>
-            <Table.Th>No.</Table.Th>
-            <Table.Th>Title & Description</Table.Th>
-            <Table.Th>Tags</Table.Th>
+            <Table.Th>
+              <IconNumber />
+            </Table.Th>
+            <Table.Th className="flex">
+              <IconFileDescription className="mr-3" />
+              Title & Description
+            </Table.Th>
+            <Table.Th>
+              <IconTag />
+            </Table.Th>
             <Table.Th>Author</Table.Th>
             <Table.Th>Created At</Table.Th>
             <Table.Th>Status</Table.Th>
@@ -48,11 +57,11 @@ export function TableComponent() {
               <Table.Td>
                 <Stack gap={0}>
                   <Text className="font-bold">
-                    {item.title?.slice(0, 50) || "No Title"}...
+                    {item.title?.slice(0, 30) || "No Title"}...
                   </Text>
                   <Divider my="sm" color="blue" variant="dotted" />
                   <Text className="font-light">
-                    {item.description?.slice(0, 120) || "No Description"}...
+                    {item.description?.slice(0, 100) || "No Description"}...
                   </Text>
                 </Stack>
               </Table.Td>

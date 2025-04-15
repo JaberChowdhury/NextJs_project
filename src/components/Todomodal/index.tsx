@@ -9,9 +9,19 @@ import {
   Title,
   Divider,
   List,
+  CardSection,
+  Button,
 } from "@mantine/core";
+import useModal from "@/store/useModal";
+import useTodo from "@/store/useTodo";
 
 const TodoModal = ({ todo }: { todo: TODO }) => {
+  const { closeModal } = useModal();
+  const { deleteTodo } = useTodo();
+  const handleClick = (id: string) => {
+    deleteTodo(id);
+    closeModal();
+  };
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Stack gap="md">
@@ -77,6 +87,15 @@ const TodoModal = ({ todo }: { todo: TODO }) => {
           Deleted At: {todo.deletedAt || "N/A"}
         </Text>
       </Stack>
+      <CardSection className="w-full flex justify-end items-end py-3">
+        <Button
+          onClick={() => handleClick(todo.id)}
+          variant="outline"
+          color="red"
+        >
+          Delete
+        </Button>
+      </CardSection>
     </Card>
   );
 };

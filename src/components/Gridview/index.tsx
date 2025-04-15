@@ -45,7 +45,13 @@ const GridView = () => {
     <Grid>
       {todos.map((todo) => (
         <Grid.Col key={todo.id} span={4} onClick={() => handleClick(todo.id)}>
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            className="hover:bg-slate-50/[0.1] hover:border hover:border-slate-50/[0.2] "
+          >
             <Group mb="xs">
               <Text className="font-[500]">{todo.title}</Text>
               <Badge color={getStatusColor(todo.status)}>{todo.status}</Badge>

@@ -22,6 +22,7 @@ const Listview = () => {
           shadow="sm"
           padding="lg"
           radius="md"
+          className="hover:bg-slate-50/[0.1] hover:border hover:border-slate-50/[0.2] "
           withBorder
         >
           <Group mb="xs">
