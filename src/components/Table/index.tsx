@@ -2,11 +2,11 @@
 
 import useModal from "@/store/useModal";
 import useTodo from "@/store/useTodo";
-import { Table, Stack, Badge, Button, Text, Divider } from "@mantine/core";
-import TodoModal from "../Todomodal";
+import { Badge, Divider, Stack, Table, Text } from "@mantine/core";
 import { formatDistanceToNow } from "date-fns";
+import TodoModal from "../Todomodal";
 
-import { IconNumber, IconTag, IconFileDescription } from "@tabler/icons-react";
+import { IconFileDescription, IconNumber, IconTag } from "@tabler/icons-react";
 
 export function TableComponent() {
   const { todos } = useTodo();

@@ -1,13 +1,7 @@
-import { create } from "zustand";
 import {
-  randUuid,
-  randPhrase,
-  randParagraph,
-  randPastDate,
-  randBoolean,
-  randFullName,
-  randEmail,
+  randPhrase
 } from "@ngneat/falso";
+import { create } from "zustand";
 
 // Define types for our analysis
 type CharacterCount = Record<string, number>;
@@ -31,15 +25,12 @@ function analyzeArray(
     }
   }
 
-  // if (asArray) {
-  //   return Object.entries(result).map(([key, value]) => ({ [key]: value }));
-  // }
-
   if (asArray) {
-    return Object.entries(result).map(([key, value]) => ({
+    const analyzedDataArray = Object.entries(result).map(([key, value]) => ({
       key: key === " " ? "' '" : key,
       count: value,
     }));
+    return analyzedDataArray.sort((a, b) => b.count - a.count);
   }
 
   return result;

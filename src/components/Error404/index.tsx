@@ -1,6 +1,6 @@
 import { Button, Container, Group, Text, Title } from "@mantine/core";
-import classes from "./style.module.css";
 import Link from "next/link";
+import classes from "./style.module.css";
 
 const Svgtext = ({ classnames }: { classnames?: string }) => {
   return (

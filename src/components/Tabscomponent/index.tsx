@@ -1,7 +1,7 @@
 import { Tabs } from "@mantine/core";
 import {
-  IconPhoto,
   IconMessageCircle,
+  IconPhoto,
   IconSettings,
 } from "@tabler/icons-react";
 

@@ -1,17 +1,17 @@
-import { z } from "zod";
-import { useForm, Controller } from "react-hook-form";
+import useModal from "@/store/useModal";
+import useTodo, { Priority, type TODO, TodoStatus } from "@/store/useTodo";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
-  TextInput,
-  Textarea,
+  Button,
+  Group,
   MultiSelect,
   Select,
-  Group,
-  Button,
   Stack,
+  TextInput,
+  Textarea,
 } from "@mantine/core";
-import useTodo, { type TODO, TodoStatus, Priority } from "@/store/useTodo";
-import useModal from "@/store/useModal";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
 
 const todoSchema = z.object({
   title: z.string().min(1, "Title is required"),

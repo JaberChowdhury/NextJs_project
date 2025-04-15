@@ -1,6 +1,5 @@
-import { Stack, Button } from "@mantine/core";
+import { Button, Stack } from "@mantine/core";
 import Link from "next/link";
-import React from "react";
 import { ColorSchemesSwitcher } from "../color-schemes-switcher";
 
 const Navbar = () => {

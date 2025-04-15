@@ -1,7 +1,6 @@
-import React from "react";
-import { Card, Text, Badge, Group, Stack } from "@mantine/core";
-import useTodo from "@/store/useTodo";
 import useModal from "@/store/useModal";
+import useTodo from "@/store/useTodo";
+import { Badge, Card, Group, Stack, Text } from "@mantine/core";
 import TodoModal from "../Todomodal";
 
 const Listview = () => {

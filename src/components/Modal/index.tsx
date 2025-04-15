@@ -1,6 +1,6 @@
 "use client";
-import { Modal } from "@mantine/core";
 import useModal from "@/store/useModal";
+import { Modal } from "@mantine/core";
 
 function ModalComponent() {
   const { isOpen, closeModal, title, component } = useModal();

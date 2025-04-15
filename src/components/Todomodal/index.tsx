@@ -1,19 +1,18 @@
+import useModal from "@/store/useModal";
 import type { TODO } from "@/store/useTodo";
-import React from "react";
+import useTodo from "@/store/useTodo";
 import {
   Badge,
+  Button,
   Card,
+  CardSection,
+  Divider,
   Group,
+  List,
   Stack,
   Text,
   Title,
-  Divider,
-  List,
-  CardSection,
-  Button,
 } from "@mantine/core";
-import useModal from "@/store/useModal";
-import useTodo from "@/store/useTodo";
 
 const TodoModal = ({ todo }: { todo: TODO }) => {
   const { closeModal } = useModal();

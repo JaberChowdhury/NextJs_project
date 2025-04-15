@@ -1,7 +1,6 @@
 import useModal from "@/store/useModal";
 import { Button, Stack } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
-import React from "react";
 import Formcomponent from "./Form";
 
 const index = () => {
