@@ -8,6 +8,7 @@ import {
 import theme from "./theme";
 import "./globals.css";
 import { Rowdies } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
 const rowdies = Rowdies({
   weight: ["400", "700"],
@@ -33,9 +34,8 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <MantineProvider theme={theme}>
-          <Container fluid className=" container mx-auto">
-            {children}
-          </Container>
+          <Navbar />
+          {children}
         </MantineProvider>
       </body>
     </html>

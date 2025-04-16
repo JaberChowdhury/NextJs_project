@@ -2,12 +2,15 @@
 
 import { useMantineColorScheme, Button, Stack } from "@mantine/core";
 import { IconSun, IconMoon } from "@tabler/icons-react";
+import { useEffect } from "react";
 
 export function ColorSchemesSwitcher() {
   const { setColorScheme, colorScheme } = useMantineColorScheme();
-
+  useEffect(() => {
+    setColorScheme("light");
+  }, []);
   return (
-    <Stack className="w-full justify-end items-end container px-8 ">
+    <Stack>
       <Button
         onClick={
           colorScheme === "dark"
@@ -20,3 +23,4 @@ export function ColorSchemesSwitcher() {
     </Stack>
   );
 }
+
