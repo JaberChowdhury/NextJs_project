@@ -1,18 +1,27 @@
-import Fact from "@/components/Fact";
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
-import Imagesection from "@/components/Imagesection";
-import { Stack } from "@mui/material";
+// Server Component
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import CodeExamples from "@/components/CodeExamples";
+import ProfilesSection from "@/components/ProfilesSection";
+import { pageVariants } from "@/lib/motion";
+import { motion } from "framer-motion";
 
-const page = () => {
+export default function HomePage() {
   return (
-    <Stack>
-      <Imagesection />
-      <Features />
-      <Fact />
-      <Footer />
-    </Stack>
+    // <motion.div
+    //   variants={pageVariants}
+    //   initial="initial"
+    //   animate="animate"
+    //   exit="exit"
+    // >
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <CodeExamples />
+        <ProfilesSection />
+      </main>
+    </>
+    // </motion.div>
   );
-};
-
-export default page;
+}

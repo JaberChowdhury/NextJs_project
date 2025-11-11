@@ -1,0 +1,54 @@
+[
+  {
+    "id": "mentor-1",
+    "name": "Alex Chen",
+    "role": "ICPC World Finalist",
+    "bio": "5x ICPC Regional Champion with expertise in graph theory and dynamic programming. Passionate about teaching advanced algorithms.",
+    "avatar": "AC",
+    "achievements": [
+      { "icon": "trophy", "text": "ICPC World Finals 2023 - Top 10" },
+      { "icon": "code", "text": "Codeforces Legendary Grandmaster" },
+      { "icon": "trophy", "text": "Google Code Jam Finalist" }
+    ],
+    "social": {
+      "github": "https://github.com/alexchen",
+      "linkedin": "https://linkedin.com/in/alexchen",
+      "twitter": "https://twitter.com/alexchen_cp"
+    },
+    "accentColor": "primary"
+  },
+  {
+    "id": "mentor-2",
+    "name": "Sarah Kumar",
+    "role": "Competitive Programming Coach",
+    "bio": "Former Meta software engineer specializing in data structures and system design. Helps students crack FAANG interviews.",
+    "avatar": "SK",
+    "achievements": [
+      { "icon": "code", "text": "LeetCode Knight (Top 100)" },
+      { "icon": "trophy", "text": "Facebook Hacker Cup Top 50" },
+      { "icon": "code", "text": "ACM-ICPC Coach 3+ years" }
+    ],
+    "social": {
+      "github": "https://github.com/sarahkumar",
+      "linkedin": "https://linkedin.com/in/sarahkumar"
+    },
+    "accentColor": "secondary"
+  },
+  {
+    "id": "mentor-3",
+    "name": "David Park",
+    "role": "Algorithm Researcher",
+    "bio": "PhD in Computer Science focusing on optimization algorithms. Regular contributor to competitive programming research.",
+    "avatar": "DP",
+    "achievements": [
+      { "icon": "code", "text": "TopCoder Red (Rating 2700+)" },
+      { "icon": "trophy", "text": "IOI Gold Medalist" },
+      { "icon": "code", "text": "50+ Research Papers" }
+    ],
+    "social": {
+      "github": "https://github.com/davidpark",
+      "linkedin": "https://linkedin.com/in/davidpark"
+    },
+    "accentColor": "accent"
+  }
+]

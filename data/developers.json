@@ -1,0 +1,37 @@
+[
+  {
+    "id": "dev-1",
+    "name": "Emma Wilson",
+    "role": "Full-Stack Developer",
+    "bio": "Building the next generation of competitive programming platforms. React enthusiast and UI/UX advocate.",
+    "avatar": "EW",
+    "achievements": [
+      { "icon": "code", "text": "Built 3 CP Platforms" },
+      { "icon": "zap", "text": "Next.js Certified" },
+      { "icon": "code", "text": "Open Source Contributor" }
+    ],
+    "social": {
+      "github": "https://github.com/emmawilson",
+      "linkedin": "https://linkedin.com/in/emmawilson",
+      "twitter": "https://twitter.com/emmawilson_dev"
+    },
+    "accentColor": "primary"
+  },
+  {
+    "id": "dev-2",
+    "name": "Ryan Lee",
+    "role": "Backend Engineer",
+    "bio": "Specializes in high-performance judge systems and real-time contest infrastructure. Rust lover.",
+    "avatar": "RL",
+    "achievements": [
+      { "icon": "zap", "text": "Judge System Architect" },
+      { "icon": "code", "text": "Rust Programming Expert" },
+      { "icon": "zap", "text": "Real-time Systems" }
+    ],
+    "social": {
+      "github": "https://github.com/ryanlee",
+      "linkedin": "https://linkedin.com/in/ryanlee"
+    },
+    "accentColor": "secondary"
+  }
+]
