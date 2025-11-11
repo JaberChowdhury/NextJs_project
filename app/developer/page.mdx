@@ -1,0 +1,322 @@
+# its s testing route from jaber
+
+<table tabindex="0">
+<thead>
+<tr>
+<th><strong>Method / Container</strong></th>
+<th><strong>vector</strong></th>
+<th><strong>list</strong></th>
+<th><strong>queue</strong></th>
+<th><strong>stack</strong></th>
+<th><strong>set</strong></th>
+<th><strong>map</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong> <strong>Code</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[]</code>, <code>at()</code></td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>Access element at a specific index or key</td>
+<td><code>v[0]; v.at(1); m["key"];</code></td>
+</tr>
+<tr>
+<td><code>push_back()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>Add element to the <strong>end</strong></td>
+<td><code>v.push_back(10); l.push_back(20);</code></td>
+</tr>
+<tr>
+<td><code>push_front()</code></td>
+<td>❌</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>Add element to the <strong>front</strong></td>
+<td><code>l.push_front(5);</code></td>
+</tr>
+<tr>
+<td><code>push()</code></td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>Add element (queue: back, stack: top)</td>
+<td><code>q.push(30); s.push(40);</code></td>
+</tr>
+<tr>
+<td><code>insert()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔</td>
+<td>Insert element at position or key</td>
+<td><code>v.insert(v.begin()+1,5); st.insert(10); m.insert({1,100});</code></td>
+</tr>
+<tr>
+<td><code>pop_back()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>Remove the <strong>last element</strong></td>
+<td><code>v.pop_back(); l.pop_back();</code></td>
+</tr>
+<tr>
+<td><code>pop_front()</code></td>
+<td>❌</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>Remove the <strong>first element</strong></td>
+<td><code>l.pop_front();</code></td>
+</tr>
+<tr>
+<td><code>pop()</code></td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>Remove element (queue: front, stack: top)</td>
+<td><code>q.pop(); s.pop();</code></td>
+</tr>
+<tr>
+<td><code>erase()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔</td>
+<td>Remove element at position or key</td>
+<td><code>v.erase(v.begin()+1); l.erase(it); st.erase(10); m.erase(1);</code></td>
+</tr>
+<tr>
+<td><code>remove()</code></td>
+<td>❌</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>Remove all elements equal to a value</td>
+<td><code>l.remove(2);</code></td>
+</tr>
+<tr>
+<td><code>clear()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔</td>
+<td>Remove <strong>all elements</strong></td>
+<td><code>v.clear(); l.clear(); st.clear(); m.clear();</code></td>
+</tr>
+<tr>
+<td><code>front()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>Access the <strong>first element</strong></td>
+<td><code>v.front(); l.front(); q.front();</code></td>
+</tr>
+<tr>
+<td><code>back()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>Access the <strong>last element</strong></td>
+<td><code>v.back(); l.back(); q.back();</code></td>
+</tr>
+<tr>
+<td><code>top()</code></td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>Access the <strong>top element</strong> of the stack</td>
+<td><code>s.top();</code></td>
+</tr>
+<tr>
+<td><code>begin()/end()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>❌</td>
+<td>❌</td>
+<td>✔</td>
+<td>✔</td>
+<td>Get <strong>iterators</strong> to start and end</td>
+<td><code>for(auto it=v.begin(); it!=v.end(); ++it) {}</code></td>
+</tr>
+<tr>
+<td><code>size()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>Return number of elements</td>
+<td><code>v.size(); l.size(); q.size(); st.size(); m.size();</code></td>
+</tr>
+<tr>
+<td><code>empty()</code></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>Check if container has <strong>no elements</strong></td>
+<td><code>v.empty(); l.empty(); q.empty(); st.empty(); m.empty();</code></td>
+</tr>
+</tbody>
+</table>
+<pre>
+  <code>
+```js
+      import { clsx, type ClassValue } from "clsx"
+      import { twMerge } from "tailwind-merge"
+
+      export function cn(...inputs: ClassValue[]) {
+        return twMerge(clsx(inputs))
+      }
+
+```
+  </code>
+</pre>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Supplier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>P001</td>
+      <td>Laptop X1</td>
+      <td>Electronics</td>
+      <td>$1200.00</td>
+      <td>50</td>
+      <td>TechCorp</td>
+    </tr>
+    <tr>
+      <td>P002</td>
+      <td>Smartphone Z2</td>
+      <td>Electronics</td>
+      <td>$800.00</td>
+      <td>120</td>
+      <td>MobileSolutions</td>
+    </tr>
+    <tr>
+      <td>P003</td>
+      <td>Desk Chair Pro</td>
+      <td>Office Furniture</td>
+      <td>$250.00</td>
+      <td>30</td>
+      <td>ErgoDesigns</td>
+    </tr>
+    <tr>
+      <td>P004</td>
+      <td>Wireless Mouse</td>
+      <td>Accessories</td>
+      <td>$25.00</td>
+      <td>200</td>
+      <td>TechCorp</td>
+    </tr>
+    <tr>
+      <td>P005</td>
+      <td>Mechanical Keyboard</td>
+      <td>Accessories</td>
+      <td>$90.00</td>
+      <td>80</td>
+      <td>KeyMaster</td>
+    </tr>
+    <tr>
+      <td>P006</td>
+      <td>Monitor 27-inch</td>
+      <td>Electronics</td>
+      <td>$350.00</td>
+      <td>70</td>
+      <td>DisplayWorld</td>
+    </tr>
+    <tr>
+      <td>P007</td>
+      <td>External Hard Drive 1TB</td>
+      <td>Storage</td>
+      <td>$70.00</td>
+      <td>150</td>
+      <td>DataSafe</td>
+    </tr>
+    <tr>
+      <td>P008</td>
+      <td>Office Desk Large</td>
+      <td>Office Furniture</td>
+      <td>$400.00</td>
+      <td>20</td>
+      <td>ErgoDesigns</td>
+    </tr>
+    <tr>
+      <td>P009</td>
+      <td>Bluetooth Speaker</td>
+      <td>Audio</td>
+      <td>$60.00</td>
+      <td>100</td>
+      <td>SoundBlast</td>
+    </tr>
+    <tr>
+      <td>P010</td>
+      <td>Webcam Full HD</td>
+      <td>Accessories</td>
+      <td>$45.00</td>
+      <td>90</td>
+      <td>StreamCam</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4">Total Products:</td>
+      <td>500+</td>
+      <td>Various</td>
+    </tr>
+  </tfoot>
+</table>
+```
